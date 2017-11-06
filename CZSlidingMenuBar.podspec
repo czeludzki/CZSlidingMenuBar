@@ -9,17 +9,9 @@
 Pod::Spec.new do |s|
   s.name             = 'CZSlidingMenuBar'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CZSlidingMenuBar.'
+  s.summary          = 'A CZSlidingMenuBar.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'CZSlidingMenuBar can automatically interact with other scroll views on the slide.'
 
   s.homepage         = 'https://github.com/czeludzki/CZSlidingMenuBar'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -37,6 +29,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.frameworks = 'UIKit'
+  # s.dependency 'Masonry'
 end
