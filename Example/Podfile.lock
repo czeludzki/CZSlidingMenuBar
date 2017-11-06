@@ -1,0 +1,20 @@
+PODS:
+  - CZSlidingMenuBar (0.1.0):
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CZSlidingMenuBar (from `../`)
+  - Masonry
+
+EXTERNAL SOURCES:
+  CZSlidingMenuBar:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CZSlidingMenuBar: 0c2c91b6b76003220ded0afe0b03d29c9737b75e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: c1bfd58885abe043b791c054f8d07cecb40ec809
+
+COCOAPODS: 1.4.0.beta.2

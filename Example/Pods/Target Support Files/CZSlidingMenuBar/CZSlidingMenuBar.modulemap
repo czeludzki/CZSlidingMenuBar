@@ -1,0 +1,6 @@
+framework module CZSlidingMenuBar {
+  umbrella header "CZSlidingMenuBar-umbrella.h"
+
+  export *
+  module * { export * }
+}
