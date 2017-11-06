@@ -47,7 +47,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (UIColor *)selectedColor
 {
     if (!_selectedColor) {
-        _selectedColor = [UIColor colorWithRed:208/255 green:0/255 blue:24/255 alpha:1];
+        _selectedColor = [UIColor colorWithRed:208/255.0 green:1/255.0 blue:24/255.0 alpha:1];
     }
     return _selectedColor;
 }
@@ -61,7 +61,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (UIColor *)defaultColor
 {
     if (!_defaultColor) {
-        _defaultColor = [UIColor darkGrayColor];
+        _defaultColor = [UIColor colorWithRed:53/255.0 green:255/255.0 blue:53/255.0 alpha:1.0];
     }
     return _defaultColor;
 }
@@ -182,7 +182,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     return 0;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(CZSlidingMenuBarCollectionCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // 计算当前选中的item的center位置
     if (self.selectedIndex == indexPath.item) {
@@ -190,20 +190,20 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.center.x);
         }];
         [self layoutIfNeeded];
+        cell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
+        cell.contentButton.tintColor = self.selectedColor;
+    }else{
+        cell.contentButton.transform = CGAffineTransformIdentity;
+        cell.contentButton.tintColor = self.defaultColor;
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self didSelectItemItemAtIndex:indexPath.item];
+    [self selectItemAtIndex:indexPath.item];
 }
 
 #pragma mark - Helper
-- (void)selectButtonAtIndex:(NSInteger)index
-{
-    [self didSelectItemItemAtIndex:index];
-}
-
 - (void)makeAllBtnDeselected
 {
     for (CZSlidingMenuBarCollectionCell *cell in self.collectionView.visibleCells) {
@@ -212,7 +212,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 }
 
-- (void)didSelectItemItemAtIndex:(NSInteger)index
+- (void)selectItemAtIndex:(NSInteger)index
 {
     __weak __typeof (self) weakSelf = self;
     self.selectedIndex = index;
@@ -221,9 +221,12 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     UIButton *button = cell.contentButton;
     button.tintColor = self.selectedColor;
     button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
+    [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(cell.fs_width);
+        make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.fs_centerX);
+    }];
     [UIView animateWithDuration:.3f animations:^{
-        weakSelf.scrollLine.fs_width = cell.fs_width;
-        weakSelf.scrollLine.fs_centerX = cell.fs_centerX;
+        [weakSelf layoutIfNeeded];
         if (cell.fs_centerX > weakSelf.collectionView.contentSize.width/2) { // 按钮在整个scrollview的右方
             CGPoint offset = cell.fs_centerX + UIWindowWidth/2 < weakSelf.collectionView.contentSize.width ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(weakSelf.collectionView.contentSize.width - UIWindowWidth, 0);
             if (offset.x >= 0) [weakSelf.collectionView setContentOffset:offset];
@@ -235,8 +238,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         
     }];
     self.btnOnClick = YES;
-    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:)]) {
-        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index]];
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:index:)]) {
+        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index] index:index];
     }
     self.startX = UIWindowWidth * index;
     self.btnOnClick = NO;
@@ -249,7 +252,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     CGFloat offsetX = offset.x;
     CGFloat width = sourceScrollView.frame.size.width;
     int pageNum = (offsetX + .5f *  width) / width;
-    [self selectButtonAtIndex:pageNum];
+    [self selectItemAtIndex:pageNum];
 }
 
 - (void)setOffsetX:(CGFloat)offsetX
@@ -303,23 +306,25 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     
     // 改变颜色
     // RGB值获取
-    CGFloat R = [self.selectedColor r];
-    CGFloat G = [self.selectedColor g];
-    CGFloat B = [self.selectedColor b];
+    CGFloat selectedR = [self.selectedColor r];
+    CGFloat selectedG = [self.selectedColor g];
+    CGFloat selectedB = [self.selectedColor b];
     
-    // start + (end - start)*progress
-    // 99 209 69
-    UIColor *nextColor = kRGBColor(104.0 + (R - 104.0)*progress, 104.0 + (G - 104.0)*progress, 104.0 + (B - 104.0)*progress);
+    CGFloat defaultR = [self.defaultColor r];
+    CGFloat defaultG = [self.defaultColor g];
+    CGFloat defaultB = [self.defaultColor b];
+    
+    // start + (end - start) * progress
+    UIColor *nextColor = kRGBColor(defaultR + (selectedR - defaultR)*progress, defaultG + (selectedG - defaultG)*progress, defaultB + (selectedB - defaultB)*progress);
     targetCell.contentButton.tintColor = nextColor;
     
-    // 104 104 104
-    UIColor *currentColor = kRGBColor(R + (104.0 - R)*progress, G + (104.0 - G)*progress, B + (104.0 - B)*progress);
+    UIColor *currentColor = kRGBColor(selectedR + (defaultR - selectedR)*progress, selectedG + (defaultG - selectedG)*progress, selectedB + (defaultB - selectedB)*progress);
     sourecCell.contentButton.tintColor = currentColor;
     
     // 改变大小
     targetCell.contentButton.transform = CGAffineTransformMakeScale(1 + (self.transformScale - 1) * progress, 1 + (self.transformScale - 1) * progress);
     sourecCell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale + (1 - self.transformScale) * progress, self.transformScale + (1 - self.transformScale) * progress);
-    
+
 }
 
 #pragma mark - Overied

@@ -18,6 +18,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.userInteractionEnabled = NO;
         [self.contentView addSubview:btn];
         self.contentButton = btn;
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {

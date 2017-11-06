@@ -10,7 +10,7 @@
 #import <Masonry/Masonry.h>
 #import <CZSlidingMenuBar/CZSlidingMenuBar.h>
 
-@interface CZSlidingMenuBarViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface CZSlidingMenuBarViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CZSlidingMenuBarDelegate>
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray <UIColor *>*randomColors;
 @end
@@ -40,6 +40,7 @@
         [items addObject:item];
     }
     CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:items];
+    slidingMenuBar.delegate = self;
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
@@ -96,6 +97,12 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
     return 0;
+}
+
+#pragma mark - CZSlidingMenuBarDelegate
+- (void)slidingMenuBar:(CZSlidingMenuBar *)listView btnOnClickWithItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
+{
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 }
 
 @end
