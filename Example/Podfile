@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CZSlidingMenuBar_Example' do
+  pod 'CZSlidingMenuBar', :path => '../'
+
+  target 'CZSlidingMenuBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
