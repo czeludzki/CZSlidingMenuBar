@@ -14,7 +14,7 @@
 - (void)listScrollMenu:(CZSlidingMenuBar *)listView btnOnClickWithItem:(CZSlidingMenuBarItem *)item;
 @end
 
-@interface CZSlidingMenuBar : UIScrollView
+@interface CZSlidingMenuBar : UIView
 @property (strong, nonatomic,readonly) NSArray <CZSlidingMenuBarItem *>*items;
 
 @property (nonatomic,assign) NSInteger selectedIndex;
@@ -28,5 +28,5 @@
 - (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView;
 
 - (void)selectButtonAtIndex:(NSInteger)index;
-+ (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items andFrame:(CGRect)frame;
++ (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 @end

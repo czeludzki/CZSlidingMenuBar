@@ -38,12 +38,12 @@
     CZSlidingMenuBarItem *item2 = [[CZSlidingMenuBarItem alloc] init];
     item2.title = @"222";
     CZSlidingMenuBarItem *item3 = [[CZSlidingMenuBarItem alloc] init];
-    item2.title = @"333";
+    item3.title = @"333";
     CZSlidingMenuBarItem *item4 = [[CZSlidingMenuBarItem alloc] init];
-    item2.title = @"444";
+    item4.title = @"444";
     CZSlidingMenuBarItem *item5 = [[CZSlidingMenuBarItem alloc] init];
-    item2.title = @"555";
-    CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:@[item1,item2,item3,item4,item5] andFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    item5.title = @"555";
+    CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:@[item1,item2,item3,item4,item5]];
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);

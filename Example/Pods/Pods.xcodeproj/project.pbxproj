@@ -25,6 +25,8 @@
 		439500D11FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500CF1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m */; };
 		439500D41FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */; };
 		439500D51FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */; };
+		439500D81FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */; };
+		439500D91FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */; };
 		4876ECE8D8EF9B516E34DA8279A82F0A /* CZSlidingMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7024D8029B4E9ADD6C9C02F151AF8B9C /* CZSlidingMenuBar.m */; };
 		4D4F6D0B846791B30516332C50D1748D /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59DCA25462069AC62D6E3188CC5AD072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
@@ -113,6 +115,8 @@
 		439500CF1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIView+CZSlidingMenuBar_ViewExtension.m"; path = "CZSlidingMenuBar/Classes/UIView+CZSlidingMenuBar_ViewExtension.m"; sourceTree = "<group>"; };
 		439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZSlidingMenu_ColorExtension.h"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.h"; sourceTree = "<group>"; };
 		439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZSlidingMenu_ColorExtension.m"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.m"; sourceTree = "<group>"; };
+		439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBarCollectionCell.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.h; sourceTree = "<group>"; };
+		439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBarCollectionCell.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.m; sourceTree = "<group>"; };
 		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		5F2664AFB4DEF568367F857F10CED306 /* Pods-CZSlidingMenuBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CZSlidingMenuBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 				7024D8029B4E9ADD6C9C02F151AF8B9C /* CZSlidingMenuBar.m */,
 				1735865CB5B920BAB3C28893B3938500 /* CZSlidingMenuBarItem.h */,
 				23C21D8C1DBB91CF3D12143A7AC92B4B /* CZSlidingMenuBarItem.m */,
+				439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */,
+				439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */,
 				439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */,
 				439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */,
 				439500CE1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h */,
@@ -398,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				439500D01FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h in Headers */,
+				439500D81FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h in Headers */,
 				439500CD1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.h in Headers */,
 				377A4C17C7ADCC88099CDEAA7440C746 /* CZSlidingMenuBarItem.h in Headers */,
 				72E911BF63B9D82060615173411CFDAD /* CZSlidingMenuBar-umbrella.h in Headers */,
@@ -549,6 +556,7 @@
 				439500D11FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */,
 				5C98F9B970EE753BB8C4BFCA034AC806 /* CZSlidingMenuBarItem.m in Sources */,
 				439500CC1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.m in Sources */,
+				439500D91FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m in Sources */,
 				5BDD7D80E76E1213F2D3525CEFE08198 /* CZSlidingMenuBar-dummy.m in Sources */,
 				4876ECE8D8EF9B516E34DA8279A82F0A /* CZSlidingMenuBar.m in Sources */,
 			);
