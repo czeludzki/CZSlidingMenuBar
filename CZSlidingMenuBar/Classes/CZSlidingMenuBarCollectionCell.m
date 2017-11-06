@@ -9,7 +9,7 @@
 #import "Masonry.h"
 
 @interface CZSlidingMenuBarCollectionCell ()
-@property (nonatomic, weak) UIButton *contentButton;
+
 @end
 
 @implementation CZSlidingMenuBarCollectionCell

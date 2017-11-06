@@ -19,26 +19,30 @@
 
 @interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (weak, nonatomic) UICollectionView *collectionView;
-@property (weak,nonatomic) UIView *scrollLine;
+@property (weak, nonatomic) UIView *scrollLine;
+@property (weak, nonatomic) CADisplayLink *displayLink;
 
-@property (strong,nonatomic) NSMutableArray<UIButton *> *scrollButtonArray;
+
 @property (assign, nonatomic, getter=isBtnOnClick) BOOL btnOnClick;
-@property (assign, nonatomic) CGFloat transformScale;
+
+/**
+ 记录dragging状态,为了实时监听 dragging从 YES 变为 NO
+ */
+@property (assign, nonatomic) BOOL trackingScrollViewIsDragging;
+/**
+ 当trackingScrollView滑动停止时,不需要通知代理,记录滑动停止的状态
+ */
+@property (assign, nonatomic) BOOL trackingFlag;
+// 在相对应的scrollview scrollViewDidScroll 代理方法中,获取 scrollview 的 contextOffsetX 赋值 startX
+@property (assign, nonatomic) CGFloat offsetX;
+// 在相对应的scrollview scrollViewDidEndScrollingAnimation 代理方法中,获取 scrollview 的 contextOffsetX 赋值 startX
+@property (nonatomic ,assign) CGFloat startX;
 @end
 
 @implementation CZSlidingMenuBar
 @synthesize selectedColor = _selectedColor;
-@dynamic delegate;
 
 static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollectionCellID";
-
-- (CGFloat)_transformScale
-{
-    if (_transformScale == 0) {
-        _transformScale = 1.15;
-    }
-    return _transformScale;
-}
 
 - (UIColor *)selectedColor
 {
@@ -48,18 +52,26 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     return _selectedColor;
 }
 
-- (NSMutableArray<UIButton *> *)scrollButtonArray
-{
-    if (!_scrollButtonArray) {
-        _scrollButtonArray = [NSMutableArray array];
-    }
-    return _scrollButtonArray;
-}
-
 - (void)setSelectedColor:(UIColor *)selectedColor
 {
     _selectedColor = selectedColor;
     self.scrollLine.backgroundColor = _selectedColor;
+}
+
+- (UIColor *)defaultColor
+{
+    if (!_defaultColor) {
+        _defaultColor = [UIColor darkGrayColor];
+    }
+    return _defaultColor;
+}
+
+- (void)setLinkedScrollView:(UIScrollView *)linkedScrollView
+{
+    _linkedScrollView = linkedScrollView;
+    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(trackingScrollViewLooping:)];
+    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    self.displayLink = displayLink;
 }
 
 #pragma mark - Init
@@ -80,8 +92,9 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (instancetype)initWithItems:(NSArray <CZSlidingMenuBarItem *>*)items
 {
     if (self = [super initWithFrame:CGRectZero]) {
-        _selectedIndex = 3;
+        _selectedIndex = 0;
         _items = items;
+        _transformScale = 1.5;
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -119,6 +132,21 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.frame.size.height);
     }];
+}
+
+#pragma mark - Action
+- (void)trackingScrollViewLooping:(CADisplayLink *)sender
+{
+    if (self.linkedScrollView.isDragging) {
+        [self setOffsetX:self.linkedScrollView.contentOffset.x];
+    }
+    
+    if (self.trackingScrollViewIsDragging && !self.linkedScrollView.isDragging) {
+        self.trackingFlag = YES;
+        [self sourceScrollViewDidEndDecelerating:self.linkedScrollView];
+        self.trackingFlag = NO;
+    }
+    self.trackingScrollViewIsDragging = self.linkedScrollView.isDragging;
 }
 
 #pragma mark - <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -165,54 +193,57 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 }
 
-/*
-- (void)listBtnOnClick:(UIButton *)button
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self didSelectItemItemAtIndex:indexPath.item];
+}
+
+#pragma mark - Helper
+- (void)selectButtonAtIndex:(NSInteger)index
+{
+    [self didSelectItemItemAtIndex:index];
+}
+
+- (void)makeAllBtnDeselected
+{
+    for (CZSlidingMenuBarCollectionCell *cell in self.collectionView.visibleCells) {
+        cell.contentButton.tintColor = self.defaultColor;
+        cell.contentButton.transform = CGAffineTransformIdentity;
+    }
+}
+
+- (void)didSelectItemItemAtIndex:(NSInteger)index
 {
     __weak __typeof (self) weakSelf = self;
-    NSInteger index = [self.scrollButtonArray indexOfObject:button];    // 选中第几个
     self.selectedIndex = index;
-    [self makeAllBtnDeSelection];
+    [self makeAllBtnDeselected];
+    CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+    UIButton *button = cell.contentButton;
     button.tintColor = self.selectedColor;
     button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
     [UIView animateWithDuration:.3f animations:^{
-        weakSelf.scrollLine.fs_width = button.fs_width;
-        weakSelf.scrollLine.fs_centerX = button.fs_centerX;
-        if (button.fs_centerX > weakSelf.contentSize.width/2) { // 按钮在整个scrollview的右方
-            CGPoint offset = button.fs_centerX + UIWindowWidth/2 < weakSelf.contentSize.width ? CGPointMake(button.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(weakSelf.contentSize.width - UIWindowWidth, 0);
-            if (offset.x >= 0) [weakSelf setContentOffset:offset];
+        weakSelf.scrollLine.fs_width = cell.fs_width;
+        weakSelf.scrollLine.fs_centerX = cell.fs_centerX;
+        if (cell.fs_centerX > weakSelf.collectionView.contentSize.width/2) { // 按钮在整个scrollview的右方
+            CGPoint offset = cell.fs_centerX + UIWindowWidth/2 < weakSelf.collectionView.contentSize.width ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(weakSelf.collectionView.contentSize.width - UIWindowWidth, 0);
+            if (offset.x >= 0) [weakSelf.collectionView setContentOffset:offset];
         }else{      // 左方
-            CGPoint offset = button.fs_centerX > UIWindowWidth/2 ? CGPointMake(button.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(0, 0);
-            if ((offset.x + weakSelf.fs_width) <= weakSelf.contentSize.width) [weakSelf setContentOffset:offset];
+            CGPoint offset = cell.fs_centerX > UIWindowWidth/2 ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(0, 0);
+            if ((offset.x + weakSelf.fs_width) <= weakSelf.collectionView.contentSize.width) [weakSelf.collectionView setContentOffset:offset];
         }
     } completion:^(BOOL finished) {
         
     }];
     self.btnOnClick = YES;
-    if ([self.delegate respondsToSelector:@selector(listScrollMenu:btnOnClickWithItem:)]) {
-        [self.delegate listScrollMenu:self btnOnClickWithItem:self.items[index]];
-        self.startX = UIWindowWidth * index;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:)]) {
+        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index]];
     }
+    self.startX = UIWindowWidth * index;
     self.btnOnClick = NO;
-}
-*/
- 
-- (void)makeAllBtnDeSelection
-{
-    for (UIButton *b in self.scrollButtonArray) {
-        b.tintColor = [UIColor darkGrayColor];
-        b.transform = CGAffineTransformIdentity;
-    }
-}
-
-- (void)selectButtonAtIndex:(NSInteger)index
-{
-    UIButton *b = self.scrollButtonArray[index];
-//    [self listBtnOnClick:b];
 }
 
 - (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView
 {
-//    self.btnOnClick = NO;
     self.startX = sourceScrollView.contentOffset.x;
     CGPoint offset = sourceScrollView.contentOffset;
     CGFloat offsetX = offset.x;
@@ -225,8 +256,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 {
     if (self.isBtnOnClick) return;
     _offsetX = offsetX;
-    UIButton *sourecBtn = nil;
-    UIButton *targetBtn = nil;
+    CZSlidingMenuBarCollectionCell *sourecCell = nil;
+    CZSlidingMenuBarCollectionCell *targetCell = nil;
     
     NSInteger targetIndex = 0;
     NSInteger sourceIndex = 0;
@@ -242,9 +273,9 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
                 self.startX += UIWindowWidth;
             }
         }
-        if (targetIndex >= self.scrollButtonArray.count) return;
-        sourecBtn = [self.scrollButtonArray objectAtIndex:sourceIndex];
-        targetBtn = [self.scrollButtonArray objectAtIndex:targetIndex];
+        if (targetIndex >= self.items.count) return;
+        sourecCell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:sourceIndex inSection:0]];
+        targetCell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0]];
     }
     if (_offsetX < self.startX) {  // 向左
         if (progress != 0) {
@@ -256,15 +287,19 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             }
         }
         if (targetIndex < 0) return;
-        sourecBtn = [self.scrollButtonArray objectAtIndex:sourceIndex];
-        targetBtn = [self.scrollButtonArray objectAtIndex:targetIndex];
+        sourecCell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:sourceIndex inSection:0]];
+        targetCell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0]];
     }
     if (_offsetX == self.startX) {
         return;
     }
 
-    self.scrollLine.fs_width = sourecBtn.fs_width + ((targetBtn.fs_width - sourecBtn.fs_width) * progress);
-    self.scrollLine.fs_centerX = sourecBtn.fs_centerX + ((targetBtn.fs_centerX - sourecBtn.fs_centerX) * progress);
+    CGFloat scrollLineW = sourecCell.fs_width + (targetCell.fs_width - sourecCell.fs_width) * progress;
+    CGFloat scrollLineCenterX = sourecCell.fs_centerX + ((targetCell.fs_centerX - sourecCell.fs_centerX) * progress);
+    [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(scrollLineW);
+        make.centerX.mas_equalTo(-self.frame.size.width * .5f + scrollLineCenterX);
+    }];
     
     // 改变颜色
     // RGB值获取
@@ -275,15 +310,25 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     // start + (end - start)*progress
     // 99 209 69
     UIColor *nextColor = kRGBColor(104.0 + (R - 104.0)*progress, 104.0 + (G - 104.0)*progress, 104.0 + (B - 104.0)*progress);
-    targetBtn.titleLabel.textColor = nextColor;
+    targetCell.contentButton.tintColor = nextColor;
     
     // 104 104 104
     UIColor *currentColor = kRGBColor(R + (104.0 - R)*progress, G + (104.0 - G)*progress, B + (104.0 - B)*progress);
-    sourecBtn.titleLabel.textColor = currentColor;
+    sourecCell.contentButton.tintColor = currentColor;
     
     // 改变大小
-    targetBtn.transform = CGAffineTransformMakeScale(1 + (self.transformScale - 1) * progress, 1 + (self.transformScale - 1) * progress);
-    sourecBtn.transform = CGAffineTransformMakeScale(self.transformScale + (1 - self.transformScale) * progress, self.transformScale + (1 - self.transformScale) * progress);
+    targetCell.contentButton.transform = CGAffineTransformMakeScale(1 + (self.transformScale - 1) * progress, 1 + (self.transformScale - 1) * progress);
+    sourecCell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale + (1 - self.transformScale) * progress, self.transformScale + (1 - self.transformScale) * progress);
+    
+}
+
+#pragma mark - Overied
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    if (!newSuperview) {
+        [self.displayLink invalidate];
+    }
 }
 
 @end

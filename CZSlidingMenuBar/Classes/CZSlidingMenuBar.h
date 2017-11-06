@@ -10,22 +10,18 @@
 #import "CZSlidingMenuBarItem.h"
 
 @class CZSlidingMenuBar;
-@protocol CZListScrollMenuDelegate <UIScrollViewDelegate>
-- (void)listScrollMenu:(CZSlidingMenuBar *)listView btnOnClickWithItem:(CZSlidingMenuBarItem *)item;
+@protocol CZSlidingMenuBarDelegate <NSObject>
+- (void)slidingMenuBar:(CZSlidingMenuBar *)listView btnOnClickWithItem:(CZSlidingMenuBarItem *)item;
 @end
 
 @interface CZSlidingMenuBar : UIView
-@property (strong, nonatomic,readonly) NSArray <CZSlidingMenuBarItem *>*items;
-
-@property (nonatomic,assign) NSInteger selectedIndex;
-@property (nonatomic,weak) id<CZListScrollMenuDelegate> delegate;
+@property (weak, nonatomic) id <CZSlidingMenuBarDelegate> delegate;
+@property (strong, nonatomic, readonly) NSArray <CZSlidingMenuBarItem *>*items;
+@property (weak, nonatomic) UIScrollView *linkedScrollView;
+@property (strong, nonatomic) UIColor *defaultColor;
+@property (assign, nonatomic) NSInteger selectedIndex;
 @property (strong, nonatomic) UIColor *selectedColor;
-// 在相对应的scrollview scrollViewDidScroll 代理方法中,获取 scrollview 的 contextOffsetX 赋值 startX
-@property (assign, nonatomic) CGFloat offsetX;
-// 在相对应的scrollview scrollViewDidEndScrollingAnimation 代理方法中,获取 scrollview 的 contextOffsetX 赋值 startX
-@property (nonatomic ,assign) CGFloat startX;
-
-- (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView;
+@property (assign, nonatomic) CGFloat transformScale;
 
 - (void)selectButtonAtIndex:(NSInteger)index;
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
