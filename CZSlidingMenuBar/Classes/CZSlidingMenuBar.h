@@ -15,12 +15,17 @@
 @end
 
 @interface CZSlidingMenuBar : UIView
-@property (weak, nonatomic) id <CZSlidingMenuBarDelegate> delegate;
-@property (weak, nonatomic) UIScrollView *linkedScrollView;
 @property (strong, nonatomic, readonly) NSArray <CZSlidingMenuBarItem *>*items;
+@property (weak, nonatomic) id <CZSlidingMenuBarDelegate> delegate;
+// 需要联动的 scrollView
+@property (weak, nonatomic) UIScrollView *linkedScrollView;
+// 默认颜色
 @property (strong, nonatomic) UIColor *defaultColor;
+// 选中的颜色 || 底部滚动条的颜色
 @property (strong, nonatomic) UIColor *selectedColor;
-@property (assign, nonatomic) NSInteger selectedIndex;
+// 当前选中
+@property (assign, nonatomic, readonly) NSInteger selectedIndex;
+// 选中后放大的比例 default is 1.2
 @property (assign, nonatomic) CGFloat transformScale;
 
 - (void)selectItemAtIndex:(NSInteger)index;

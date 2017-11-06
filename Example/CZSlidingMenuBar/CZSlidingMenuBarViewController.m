@@ -40,6 +40,7 @@
         [items addObject:item];
     }
     CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:items];
+    slidingMenuBar.transformScale = 1;
     slidingMenuBar.delegate = self;
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {

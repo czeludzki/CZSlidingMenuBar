@@ -21,10 +21,9 @@
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *scrollLine;
 @property (weak, nonatomic) CADisplayLink *displayLink;
-
-
+@property (strong, nonatomic) NSMutableArray <NSValue *>*itemSizes;
+// 记录点击状态,适时禁用contentOffset的监听
 @property (assign, nonatomic, getter=isBtnOnClick) BOOL btnOnClick;
-
 /**
  记录dragging状态,为了实时监听 dragging从 YES 变为 NO
  */
@@ -61,7 +60,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (UIColor *)defaultColor
 {
     if (!_defaultColor) {
-        _defaultColor = [UIColor colorWithRed:53/255.0 green:255/255.0 blue:53/255.0 alpha:1.0];
+        _defaultColor = [UIColor darkGrayColor];
     }
     return _defaultColor;
 }
@@ -92,9 +91,11 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (instancetype)initWithItems:(NSArray <CZSlidingMenuBarItem *>*)items
 {
     if (self = [super initWithFrame:CGRectZero]) {
-        _selectedIndex = 0;
+        [self changeSelectedIndex:0];
         _items = items;
-        _transformScale = 1.5;
+        _transformScale = 1.2;
+        
+        [self depolySizes];
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -164,7 +165,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(80, 44);
+    CGSize itemSize = [self.itemSizes[indexPath.item] CGSizeValue];
+    return CGSizeMake(itemSize.width, self.frame.size.height);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -188,6 +190,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     if (self.selectedIndex == indexPath.item) {
         [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.center.x);
+            make.width.mas_equalTo([self.itemSizes[indexPath.item] CGSizeValue].width);
         }];
         [self layoutIfNeeded];
         cell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
@@ -204,6 +207,19 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 }
 
 #pragma mark - Helper
+- (void)depolySizes
+{
+    self.itemSizes = [NSMutableArray array];
+    UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    for (CZSlidingMenuBarItem *item in self.items) {
+        [tempBtn setTitle:item.title forState:UIControlStateNormal];
+        [tempBtn setImage:[UIImage imageNamed:item.imageName] forState:UIControlStateNormal];
+        tempBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
+        [tempBtn sizeToFit];
+        [self.itemSizes addObject:[NSValue valueWithCGSize:tempBtn.bounds.size]];
+    }
+}
+
 - (void)makeAllBtnDeselected
 {
     for (CZSlidingMenuBarCollectionCell *cell in self.collectionView.visibleCells) {
@@ -215,7 +231,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (void)selectItemAtIndex:(NSInteger)index
 {
     __weak __typeof (self) weakSelf = self;
-    self.selectedIndex = index;
+    [self changeSelectedIndex:index];
     [self makeAllBtnDeselected];
     CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
     UIButton *button = cell.contentButton;
@@ -255,6 +271,13 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self selectItemAtIndex:pageNum];
 }
 
+- (void)changeSelectedIndex:(NSInteger)index
+{
+    [self willChangeValueForKey:@"selectedIndex"];
+    _selectedIndex = index;
+    [self didChangeValueForKey:@"selectedIndex"];
+}
+
 - (void)setOffsetX:(CGFloat)offsetX
 {
     if (self.isBtnOnClick) return;
@@ -272,7 +295,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             sourceIndex = self.selectedIndex;
             targetIndex = sourceIndex + 1;
             if (progress >= 1) {
-                self.selectedIndex ++;
+                _selectedIndex++;
                 self.startX += UIWindowWidth;
             }
         }
@@ -285,7 +308,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             sourceIndex = self.selectedIndex;
             targetIndex = sourceIndex - 1;
             if (progress >= 1) {
-                self.selectedIndex--;
+                _selectedIndex--;
                 self.startX -= UIWindowWidth;
             }
         }
