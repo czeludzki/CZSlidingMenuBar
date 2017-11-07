@@ -30,5 +30,6 @@
 
 - (void)selectItemAtIndex:(NSInteger)index;
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
+- (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 @end
 

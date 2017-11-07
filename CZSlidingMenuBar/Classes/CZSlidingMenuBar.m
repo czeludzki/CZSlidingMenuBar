@@ -84,11 +84,11 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items
 {
-    CZSlidingMenuBar *sView = [[CZSlidingMenuBar alloc] initWithItems:items];
-    return sView;
+    CZSlidingMenuBar *bar = [[CZSlidingMenuBar alloc] initWithItems:items];
+    return bar;
 }
 
-- (instancetype)initWithItems:(NSArray <CZSlidingMenuBarItem *>*)items
+- (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items
 {
     if (self = [super initWithFrame:CGRectZero]) {
         [self changeSelectedIndex:0];
@@ -113,7 +113,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         [collectionView registerClass:[CZSlidingMenuBarCollectionCell class] forCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID];
         
         UIView *scrollLine = [[UIView alloc] initWithFrame:CGRectZero];
-        scrollLine.backgroundColor = [UIColor redColor];
+        scrollLine.backgroundColor = self.selectedColor;
         [collectionView addSubview:scrollLine];
         self.scrollLine = scrollLine;
         [scrollLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -228,12 +228,14 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 }
 
+/*
 - (void)selectItemAtIndex:(NSInteger)index
 {
     __weak __typeof (self) weakSelf = self;
     [self changeSelectedIndex:index];
     [self makeAllBtnDeselected];
     CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+    NSLog(@"selectItemAtIndex  --  cell = %@",cell);
     UIButton *button = cell.contentButton;
     button.tintColor = self.selectedColor;
     button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
@@ -243,16 +245,47 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }];
     [UIView animateWithDuration:.3f animations:^{
         [weakSelf layoutIfNeeded];
-        if (cell.fs_centerX > weakSelf.collectionView.contentSize.width/2) { // 按钮在整个scrollview的右方
+        if (cell.fs_centerX > weakSelf.collectionView.contentSize.width/2) { // 目前选中的item在整个collectionView的右方
             CGPoint offset = cell.fs_centerX + UIWindowWidth/2 < weakSelf.collectionView.contentSize.width ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(weakSelf.collectionView.contentSize.width - UIWindowWidth, 0);
             if (offset.x >= 0) [weakSelf.collectionView setContentOffset:offset];
-        }else{      // 左方
+        }else{      // 目前选中的item在整个collectionView的左方
             CGPoint offset = cell.fs_centerX > UIWindowWidth/2 ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(0, 0);
             if ((offset.x + weakSelf.fs_width) <= weakSelf.collectionView.contentSize.width) [weakSelf.collectionView setContentOffset:offset];
         }
     } completion:^(BOOL finished) {
         
     }];
+    self.btnOnClick = YES;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:index:)]) {
+        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index] index:index];
+    }
+    self.startX = UIWindowWidth * index;
+    self.btnOnClick = NO;
+}
+*/
+
+- (void)selectItemAtIndex:(NSInteger)index
+{
+    __weak __typeof (self) weakSelf = self;
+    [self changeSelectedIndex:index];
+    [self makeAllBtnDeselected];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    
+    // 当cell存在
+    CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+    if (cell) {
+        UIButton *button = cell.contentButton;
+        button.tintColor = self.selectedColor;
+        button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
+        [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(cell.fs_width);
+            make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.fs_centerX);
+        }];
+        [UIView animateWithDuration:.3f animations:^{
+            [weakSelf layoutIfNeeded];
+        } completion:nil];
+    }
+    
     self.btnOnClick = YES;
     if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:index:)]) {
         [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index] index:index];
