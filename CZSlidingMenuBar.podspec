@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CZSlidingMenuBar'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A CZSlidingMenuBar.'
 
   s.description      = 'CZSlidingMenuBar can automatically interact with other scroll views on the slide.'
