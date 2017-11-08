@@ -57,12 +57,12 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     self.scrollLine.backgroundColor = _selectedColor;
 }
 
-- (UIColor *)defaultColor
+- (UIColor *)barTintColor
 {
-    if (!_defaultColor) {
-        _defaultColor = [UIColor darkGrayColor];
+    if (!_barTintColor) {
+        _barTintColor = [UIColor darkGrayColor];
     }
-    return _defaultColor;
+    return _barTintColor;
 }
 
 - (void)setLinkedScrollView:(UIScrollView *)linkedScrollView
@@ -73,14 +73,14 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     self.displayLink = displayLink;
 }
 
-- (void)setMeanOfItem:(NSInteger)meanOfItem
+- (void)setAverageBarWidth:(NSInteger)averageBarWidth
 {
-    _meanOfItem = meanOfItem;
-    if (_meanOfItem < 0) {
-        _meanOfItem = 0;
+    _averageBarWidth = averageBarWidth;
+    if (_averageBarWidth < 0) {
+        _averageBarWidth = 0;
     }
-    if (_meanOfItem > 8) {
-        _meanOfItem = 8;
+    if (_averageBarWidth > 8) {
+        _averageBarWidth = 8;
     }
 }
 
@@ -105,7 +105,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         [self changeSelectedIndex:0];
         _items = items;
         _transformScale = 1.2;
-        _meanOfItem = 0;
+        _averageBarWidth = 0;
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -209,7 +209,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         cell.contentButton.tintColor = self.selectedColor;
     }else{
         cell.contentButton.transform = CGAffineTransformIdentity;
-        cell.contentButton.tintColor = self.defaultColor;
+        cell.contentButton.tintColor = self.barTintColor;
     }
 }
 
@@ -222,7 +222,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (void)depolyItemSizes
 {
     self.itemSizes = [NSMutableArray array];
-    if (self.meanOfItem == 0) {
+    if (self.averageBarWidth == 0) {
         UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         for (CZSlidingMenuBarItem *item in self.items) {
             [tempBtn setTitle:item.title forState:UIControlStateNormal];
@@ -233,7 +233,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         }
     }else{
         for (int i = 0; i < self.items.count; i++) {
-            [self.itemSizes addObject:[NSValue valueWithCGSize:CGSizeMake(self.frame.size.width / self.meanOfItem, self.frame.size.height)]];
+            [self.itemSizes addObject:[NSValue valueWithCGSize:CGSizeMake(self.frame.size.width / self.averageBarWidth, self.frame.size.height)]];
         }
     }
 }
@@ -241,7 +241,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (void)makeAllBtnDeselected
 {
     for (CZSlidingMenuBarCollectionCell *cell in self.collectionView.visibleCells) {
-        cell.contentButton.tintColor = self.defaultColor;
+        cell.contentButton.tintColor = self.barTintColor;
         cell.contentButton.transform = CGAffineTransformIdentity;
     }
 }
@@ -384,9 +384,9 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     CGFloat selectedG = [self.selectedColor g];
     CGFloat selectedB = [self.selectedColor b];
     
-    CGFloat defaultR = [self.defaultColor r];
-    CGFloat defaultG = [self.defaultColor g];
-    CGFloat defaultB = [self.defaultColor b];
+    CGFloat defaultR = [self.barTintColor r];
+    CGFloat defaultG = [self.barTintColor g];
+    CGFloat defaultB = [self.barTintColor b];
     
     // start + (end - start) * progress
     UIColor *nextColor = kRGBColor(defaultR + (selectedR - defaultR)*progress, defaultG + (selectedG - defaultG)*progress, defaultB + (selectedB - defaultB)*progress);

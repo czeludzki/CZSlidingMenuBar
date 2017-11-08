@@ -43,8 +43,9 @@
     slidingMenuBar.transformScale = 1.5;
     slidingMenuBar.delegate = self;
     slidingMenuBar.selectedColor = [UIColor colorWithRed:.0f green:.9f blue:.9f alpha:1];
-    slidingMenuBar.defaultColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
-    slidingMenuBar.meanOfItem = 2;
+    slidingMenuBar.barTintColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
+    slidingMenuBar.averageBarWidth = 3;
+    slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
