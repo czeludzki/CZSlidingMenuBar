@@ -33,7 +33,8 @@
 {
     _item = item;
     [self.contentButton setTitle:_item.title forState:UIControlStateNormal];
-    [self.contentButton setImage:[UIImage imageNamed:_item.imageName] forState:UIControlStateNormal];
+    [_item.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.contentButton setImage:_item.image forState:UIControlStateNormal];
 }
 
 @end

@@ -73,6 +73,17 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     self.displayLink = displayLink;
 }
 
+- (void)setMeanOfItem:(NSInteger)meanOfItem
+{
+    _meanOfItem = meanOfItem;
+    if (_meanOfItem < 0) {
+        _meanOfItem = 0;
+    }
+    if (_meanOfItem > 8) {
+        _meanOfItem = 8;
+    }
+}
+
 #pragma mark - Init
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -94,8 +105,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         [self changeSelectedIndex:0];
         _items = items;
         _transformScale = 1.2;
-        
-        [self depolySizes];
+        _meanOfItem = 0;
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -130,6 +140,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    // 计算 item 的 size
+    [self depolyItemSizes];
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.frame.size.height);
     }];
@@ -207,16 +219,22 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 }
 
 #pragma mark - Helper
-- (void)depolySizes
+- (void)depolyItemSizes
 {
     self.itemSizes = [NSMutableArray array];
-    UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    for (CZSlidingMenuBarItem *item in self.items) {
-        [tempBtn setTitle:item.title forState:UIControlStateNormal];
-        [tempBtn setImage:[UIImage imageNamed:item.imageName] forState:UIControlStateNormal];
-        tempBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
-        [tempBtn sizeToFit];
-        [self.itemSizes addObject:[NSValue valueWithCGSize:tempBtn.bounds.size]];
+    if (self.meanOfItem == 0) {
+        UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        for (CZSlidingMenuBarItem *item in self.items) {
+            [tempBtn setTitle:item.title forState:UIControlStateNormal];
+            [tempBtn setImage:item.image forState:UIControlStateNormal];
+            tempBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
+            [tempBtn sizeToFit];
+            [self.itemSizes addObject:[NSValue valueWithCGSize:tempBtn.bounds.size]];
+        }
+    }else{
+        for (int i = 0; i < self.items.count; i++) {
+            [self.itemSizes addObject:[NSValue valueWithCGSize:CGSizeMake(self.frame.size.width / self.meanOfItem, self.frame.size.height)]];
+        }
     }
 }
 

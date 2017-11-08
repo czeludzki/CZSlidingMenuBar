@@ -21,7 +21,7 @@
 {
     if (!_randomColors) {
         _randomColors = [NSMutableArray array];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 3; i++) {
             UIColor *c = [UIColor colorWithRed:(arc4random_uniform(256) / 255.0) green:(arc4random_uniform(256) / 255.0) blue:(arc4random_uniform(256) / 255.0) alpha:1];
             [_randomColors addObject:c];
         }
@@ -44,6 +44,7 @@
     slidingMenuBar.delegate = self;
     slidingMenuBar.selectedColor = [UIColor colorWithRed:.0f green:.9f blue:.9f alpha:1];
     slidingMenuBar.defaultColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
+    slidingMenuBar.meanOfItem = 2;
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);

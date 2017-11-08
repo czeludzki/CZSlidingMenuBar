@@ -15,6 +15,7 @@
 @end
 
 @interface CZSlidingMenuBar : UIView
+
 @property (strong, nonatomic, readonly) NSArray <CZSlidingMenuBarItem *>*items;
 @property (weak, nonatomic) id <CZSlidingMenuBarDelegate> delegate;
 // 需要联动的 scrollView
@@ -27,8 +28,17 @@
 @property (assign, nonatomic, readonly) NSInteger selectedIndex;
 // 选中后放大的比例 default is 1.2
 @property (assign, nonatomic) CGFloat transformScale;
+/*
+ 根据bar的宽度均分item, 可决定item的宽度是否自适应 及 item 的宽度
+ 取值范围 : 0 ~ 8
+    default is 0
+    if 0, item 将根据自身内容自适应 ----> |A|AAA|AAAAAAAAA|
+    if 1 ~ 8, item宽度 = bar.width / 1 ~ 8  ----> |  a  | aaa |aaaaa|
+ */
+@property (assign, nonatomic) NSInteger meanOfItem;
 
 - (void)selectItemAtIndex:(NSInteger)index;
+
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 @end

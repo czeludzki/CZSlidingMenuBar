@@ -10,5 +10,5 @@
 
 @interface CZSlidingMenuBarItem : NSObject
 @property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *imageName;
+@property (copy, nonatomic) UIImage *image;
 @end
