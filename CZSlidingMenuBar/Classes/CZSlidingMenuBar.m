@@ -227,7 +227,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         for (CZSlidingMenuBarItem *item in self.items) {
             [tempBtn setTitle:item.title forState:UIControlStateNormal];
             [tempBtn setImage:item.image forState:UIControlStateNormal];
-            tempBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
+            tempBtn.contentEdgeInsets = item.contentEdgeInsets;
+            tempBtn.titleEdgeInsets = item.titleEdgeInsets;
             [tempBtn sizeToFit];
             [self.itemSizes addObject:[NSValue valueWithCGSize:tempBtn.bounds.size]];
         }

@@ -10,4 +10,14 @@
 
 @implementation CZSlidingMenuBarItem
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
+        _imageEdgeInsets = UIEdgeInsetsZero;
+        _titleEdgeInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
 @end

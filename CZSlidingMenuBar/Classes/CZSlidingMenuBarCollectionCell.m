@@ -32,9 +32,12 @@
 - (void)setItem:(CZSlidingMenuBarItem *)item
 {
     _item = item;
+    UIImage *img = [_item.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.contentButton setTitle:_item.title forState:UIControlStateNormal];
-    [_item.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.contentButton setImage:_item.image forState:UIControlStateNormal];
+    [self.contentButton setImage:img forState:UIControlStateNormal];
+    self.contentButton.contentEdgeInsets = _item.contentEdgeInsets;
+    self.contentButton.titleEdgeInsets = _item.titleEdgeInsets;
+    self.contentButton.imageEdgeInsets = _item.imageEdgeInsets;
 }
 
 @end

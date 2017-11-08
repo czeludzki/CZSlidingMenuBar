@@ -11,4 +11,7 @@
 @interface CZSlidingMenuBarItem : NSObject
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) UIImage *image;
+@property (assign, nonatomic) UIEdgeInsets contentEdgeInsets;
+@property (assign, nonatomic) UIEdgeInsets titleEdgeInsets;
+@property (nonatomic, assign) UIEdgeInsets imageEdgeInsets;
 @end
