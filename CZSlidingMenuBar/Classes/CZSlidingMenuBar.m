@@ -106,6 +106,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         _items = items;
         _transformScale = 1.2;
         _averageBarWidth = 0;
+        _itemFont = [UIFont systemFontOfSize:17];
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -172,6 +173,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 {
     CZSlidingMenuBarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID forIndexPath:indexPath];
     cell.item = self.items[indexPath.item];
+    cell.contentButton.titleLabel.font = self.itemFont;
     return cell;
 }
 
@@ -229,6 +231,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             [tempBtn setImage:item.image forState:UIControlStateNormal];
             tempBtn.contentEdgeInsets = item.contentEdgeInsets;
             tempBtn.titleEdgeInsets = item.titleEdgeInsets;
+            tempBtn.imageEdgeInsets = item.imageEdgeInsets;
+            tempBtn.titleLabel.font = self.itemFont;
             [tempBtn sizeToFit];
             [self.itemSizes addObject:[NSValue valueWithCGSize:tempBtn.bounds.size]];
         }

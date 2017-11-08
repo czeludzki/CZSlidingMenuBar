@@ -15,7 +15,6 @@
 @end
 
 @interface CZSlidingMenuBar : UIView
-
 @property (strong, nonatomic, readonly) NSArray <CZSlidingMenuBarItem *>*items;
 /**
  delegate
@@ -33,6 +32,10 @@
  选中的颜色 || 底部滚动条的颜色
  */
 @property (strong, nonatomic) UIColor *selectedColor;
+/**
+ font
+ */
+@property (strong, nonatomic) UIFont *itemFont;
 /**
  当前选中的 index
  */
