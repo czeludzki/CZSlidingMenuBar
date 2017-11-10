@@ -251,42 +251,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 }
 
-/*
-- (void)selectItemAtIndex:(NSInteger)index
-{
-    __weak __typeof (self) weakSelf = self;
-    [self changeSelectedIndex:index];
-    [self makeAllBtnDeselected];
-    CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
-    NSLog(@"selectItemAtIndex  --  cell = %@",cell);
-    UIButton *button = cell.contentButton;
-    button.tintColor = self.selectedColor;
-    button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
-    [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(cell.fs_width);
-        make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.fs_centerX);
-    }];
-    [UIView animateWithDuration:.3f animations:^{
-        [weakSelf layoutIfNeeded];
-        if (cell.fs_centerX > weakSelf.collectionView.contentSize.width/2) { // 目前选中的item在整个collectionView的右方
-            CGPoint offset = cell.fs_centerX + UIWindowWidth/2 < weakSelf.collectionView.contentSize.width ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(weakSelf.collectionView.contentSize.width - UIWindowWidth, 0);
-            if (offset.x >= 0) [weakSelf.collectionView setContentOffset:offset];
-        }else{      // 目前选中的item在整个collectionView的左方
-            CGPoint offset = cell.fs_centerX > UIWindowWidth/2 ? CGPointMake(cell.fs_centerX - UIWindowWidth / 2, 0) : CGPointMake(0, 0);
-            if ((offset.x + weakSelf.fs_width) <= weakSelf.collectionView.contentSize.width) [weakSelf.collectionView setContentOffset:offset];
-        }
-    } completion:^(BOOL finished) {
-        
-    }];
-    self.btnOnClick = YES;
-    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:index:)]) {
-        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index] index:index];
-    }
-    self.startX = UIWindowWidth * index;
-    self.btnOnClick = NO;
-}
-*/
-
 - (void)selectItemAtIndex:(NSInteger)index
 {
     __weak __typeof (self) weakSelf = self;
@@ -310,8 +274,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
     
     self.btnOnClick = YES;
-    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectItem:atIndex:)]) {
-        [self.delegate slidingMenuBar:self didSelectItem:self.items[index] atIndex:index];
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectedItem:atIndex:)]) {
+        [self.delegate slidingMenuBar:self didSelectedItem:self.items[index] atIndex:index];
     }
     self.startX = UIWindowWidth * index;
     self.btnOnClick = NO;

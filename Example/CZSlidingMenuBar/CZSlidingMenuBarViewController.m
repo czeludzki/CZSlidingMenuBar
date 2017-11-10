@@ -21,7 +21,7 @@
 {
     if (!_randomColors) {
         _randomColors = [NSMutableArray array];
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 30; i++) {
             UIColor *c = [UIColor colorWithRed:(arc4random_uniform(256) / 255.0) green:(arc4random_uniform(256) / 255.0) blue:(arc4random_uniform(256) / 255.0) alpha:1];
             [_randomColors addObject:c];
         }
@@ -33,9 +33,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemOnClick:)];
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-    
     NSMutableArray *items = [NSMutableArray array];
     for (int i = 0; i < self.randomColors.count; i++) {
         CZSlidingMenuBarItem *item = [[CZSlidingMenuBarItem alloc] init];
@@ -108,16 +105,9 @@
 }
 
 #pragma mark - CZSlidingMenuBarDelegate
-- (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
+- (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectedItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
 {
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-}
-
-#pragma mark - Action
-- (void)rightBarButtonItemOnClick:(UIBarButtonItem *)sender
-{
-    CZSlidingMenuBarViewController *vc = [[[self class] alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
