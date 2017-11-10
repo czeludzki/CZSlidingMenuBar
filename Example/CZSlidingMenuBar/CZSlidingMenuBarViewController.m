@@ -44,7 +44,7 @@
     slidingMenuBar.delegate = self;
     slidingMenuBar.selectedColor = [UIColor colorWithRed:.0f green:.9f blue:.9f alpha:1];
     slidingMenuBar.barTintColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
-    slidingMenuBar.averageBarWidth = 3;
+    slidingMenuBar.averageBarWidth = 0;     // 0 ~ 8
     slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +60,9 @@
     [self.view addSubview:collectionView];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(slidingMenuBar.mas_bottom);
-        make.left.right.bottom.mas_equalTo(0);
+//        make.left.right.bottom.mas_equalTo(0);
+        make.left.mas_equalTo(32);
+        make.right.bottom.mas_equalTo(-32);
     }];
     self.collectionView = collectionView;
     collectionView.dataSource = self;

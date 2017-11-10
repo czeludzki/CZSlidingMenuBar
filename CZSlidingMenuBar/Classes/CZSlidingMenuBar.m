@@ -14,7 +14,6 @@
 #import "UIColor+CZSlidingMenu_ColorExtension.h"
 #import "CZSlidingMenuBarCollectionCell.h"
 
-#define UIWindowWidth [UIScreen mainScreen].bounds.size.width
 #define kRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 @interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -131,7 +130,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.bottom.mas_equalTo(0);
             make.centerX.mas_equalTo(0);
             make.height.mas_equalTo(2);
-            make.width.mas_equalTo(UIWindowWidth / 5);
+            make.width.mas_equalTo(1);
         }];
     }
     return self;
@@ -277,7 +276,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectedItem:atIndex:)]) {
         [self.delegate slidingMenuBar:self didSelectedItem:self.items[index] atIndex:index];
     }
-    self.startX = UIWindowWidth * index;
+    self.startX = self.linkedScrollView.fs_width * index;
     self.btnOnClick = NO;
 }
 
@@ -308,7 +307,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     NSInteger targetIndex = 0;
     NSInteger sourceIndex = 0;
     
-    CGFloat progress = fabs(_offsetX - self.startX) / UIWindowWidth;    // 滑动进度
+    CGFloat progress = fabs(_offsetX - self.startX) / self.linkedScrollView.fs_width;    // 滑动进度
     
     if (_offsetX > self.startX) {   // 向右
         if (progress != 0) {
@@ -316,7 +315,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             targetIndex = sourceIndex + 1;
             if (progress >= 1) {
                 _selectedIndex++;
-                self.startX += UIWindowWidth;
+                self.startX += self.linkedScrollView.fs_width;
             }
         }
         if (targetIndex >= self.items.count) return;
@@ -329,7 +328,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             targetIndex = sourceIndex - 1;
             if (progress >= 1) {
                 _selectedIndex--;
-                self.startX -= UIWindowWidth;
+                self.startX -= self.linkedScrollView.fs_width;
             }
         }
         if (targetIndex < 0) return;
