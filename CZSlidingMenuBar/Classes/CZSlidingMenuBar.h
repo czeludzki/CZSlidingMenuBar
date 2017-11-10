@@ -11,7 +11,10 @@
 
 @class CZSlidingMenuBar;
 @protocol CZSlidingMenuBarDelegate <NSObject>
-- (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar btnOnClickWithItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index;
+/**
+ 不论滑动后选定item 或 点击item选定,都会走这个方法
+ */
+- (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index;
 @end
 
 @interface CZSlidingMenuBar : UIView

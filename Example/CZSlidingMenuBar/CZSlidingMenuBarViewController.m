@@ -33,6 +33,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemOnClick:)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
     NSMutableArray *items = [NSMutableArray array];
     for (int i = 0; i < self.randomColors.count; i++) {
         CZSlidingMenuBarItem *item = [[CZSlidingMenuBarItem alloc] init];
@@ -105,9 +108,16 @@
 }
 
 #pragma mark - CZSlidingMenuBarDelegate
-- (void)slidingMenuBar:(CZSlidingMenuBar *)listView btnOnClickWithItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
+- (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
 {
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+}
+
+#pragma mark - Action
+- (void)rightBarButtonItemOnClick:(UIBarButtonItem *)sender
+{
+    CZSlidingMenuBarViewController *vc = [[[self class] alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

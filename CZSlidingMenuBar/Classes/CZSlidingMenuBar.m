@@ -310,8 +310,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
     
     self.btnOnClick = YES;
-    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:btnOnClickWithItem:index:)]) {
-        [self.delegate slidingMenuBar:self btnOnClickWithItem:self.items[index] index:index];
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectItem:atIndex:)]) {
+        [self.delegate slidingMenuBar:self didSelectItem:self.items[index] atIndex:index];
     }
     self.startX = UIWindowWidth * index;
     self.btnOnClick = NO;
