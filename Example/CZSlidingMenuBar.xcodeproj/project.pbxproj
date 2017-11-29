@@ -61,9 +61,9 @@
 		763FF9D51076F5E32470BA83 /* Pods-CZSlidingMenuBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CZSlidingMenuBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CZSlidingMenuBar_Example/Pods-CZSlidingMenuBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DDD74AB3B97D24444AD4727 /* Pods_CZSlidingMenuBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CZSlidingMenuBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		92B067DB74C0559992154D89 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A987D89EC6E1BE825752F0A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		BBB809AE38EA1486212797CC /* CZSlidingMenuBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CZSlidingMenuBar.podspec; path = ../CZSlidingMenuBar.podspec; sourceTree = "<group>"; };
+		92B067DB74C0559992154D89 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A987D89EC6E1BE825752F0A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		BBB809AE38EA1486212797CC /* CZSlidingMenuBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CZSlidingMenuBar.podspec; path = ../CZSlidingMenuBar.podspec; sourceTree = "<group>"; };
 		C6FE3FB81F34851E7BAB8FD9 /* Pods_CZSlidingMenuBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CZSlidingMenuBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80AD63DC8C004F8A138DA3F /* Pods-CZSlidingMenuBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CZSlidingMenuBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F478831967B60DA3F0397C5C /* Pods-CZSlidingMenuBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CZSlidingMenuBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -490,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -11,7 +11,11 @@
 #endif
 
 #import "CZSlidingMenuBar.h"
+#import "CZSlidingMenuBarCollectionCell.h"
 #import "CZSlidingMenuBarItem.h"
+#import "NSString+CZSlidingMenuBar_StringExtension.h"
+#import "UIColor+CZSlidingMenu_ColorExtension.h"
+#import "UIView+CZSlidingMenuBar_ViewExtension.h"
 
 FOUNDATION_EXPORT double CZSlidingMenuBarVersionNumber;
 FOUNDATION_EXPORT const unsigned char CZSlidingMenuBarVersionString[];

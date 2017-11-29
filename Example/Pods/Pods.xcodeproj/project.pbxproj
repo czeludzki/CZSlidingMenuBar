@@ -8,154 +8,154 @@
 
 /* Begin PBXBuildFile section */
 		017C4AC71E30BB0875BA391AF2AFFFE0 /* Pods-CZSlidingMenuBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4B5D219BBC26881E14BEDCDE3F3B0C /* Pods-CZSlidingMenuBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		042426E4499456EFD64F6D720C96C434 /* CZSlidingMenuBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B46B931EA89992FCF2733E356D33B18E /* CZSlidingMenuBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05659F3D9798894A535C9315C4F675D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		061D26952031EB7752F30565ABAB858D /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
+		077A786E31FFD86A85E23B1BF633A2D7 /* UIColor+CZSlidingMenu_ColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 059F74B4BA8661D77AABF81A43876149 /* UIColor+CZSlidingMenu_ColorExtension.m */; };
+		07AE3C1691118F84DA612F79E7E03D76 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */; };
+		0B404E05ED76D0BA611F849658E11705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
 		1DCDA52F67DEF9F38458CEC0601C8583 /* Pods-CZSlidingMenuBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76418D7E1DB4214B9070D0CC6A9A896A /* Pods-CZSlidingMenuBar_Tests-dummy.m */; };
-		2B744C4B71246D20AE3D7C7AB3084822 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */; };
-		2D3B865511C62A9500E71FB0620ADFE8 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */; };
-		2D44A612A1CB4B674C32A3CA0A2D5FA7 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2FB65A876D2CC91D8942F322319A4446 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36764680722BA5327810BD74F7B19B29 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		377A4C17C7ADCC88099CDEAA7440C746 /* CZSlidingMenuBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735865CB5B920BAB3C28893B3938500 /* CZSlidingMenuBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DF9D7DF7D0276490DD6C2152DAD89B8 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */; };
+		2046564EC8DA65757315129A8A4955FE /* UIColor+CZSlidingMenu_ColorExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F16CAE471D297844FB378FA7E86849 /* UIColor+CZSlidingMenu_ColorExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		204C62463CA5262F7D9A93BED2E428F2 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		241263961CEA1CCD9AAB708B61551A69 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		317A15296AD8A5BCD24A4956F85CF6C0 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33C965A608BFCC2D66017B6F8E152B2F /* CZSlidingMenuBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B7F747A652EEA6CF9563131DB9E36031 /* CZSlidingMenuBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		380CD1C31E5507D3CC44A083EA131900 /* Pods-CZSlidingMenuBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE73451F5BB5E7CA8C3D9E3712442D83 /* Pods-CZSlidingMenuBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38894DE817DEEC16783C61B49B792B7D /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE937DE71A73D4B7779FF934EC2373E2 /* Masonry-dummy.m */; };
-		439500CC1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500CA1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.m */; };
-		439500CD1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500CB1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.h */; };
-		439500D01FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500CE1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h */; };
-		439500D11FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500CF1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m */; };
-		439500D41FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */; };
-		439500D51FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */; };
-		439500D81FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */; };
-		439500D91FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */; };
-		4876ECE8D8EF9B516E34DA8279A82F0A /* CZSlidingMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7024D8029B4E9ADD6C9C02F151AF8B9C /* CZSlidingMenuBar.m */; };
-		4D4F6D0B846791B30516332C50D1748D /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59DCA25462069AC62D6E3188CC5AD072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
-		5BDD7D80E76E1213F2D3525CEFE08198 /* CZSlidingMenuBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDBC503ECEA57C3B77656A58841A0FC /* CZSlidingMenuBar-dummy.m */; };
-		5C98F9B970EE753BB8C4BFCA034AC806 /* CZSlidingMenuBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C21D8C1DBB91CF3D12143A7AC92B4B /* CZSlidingMenuBarItem.m */; };
-		5CBB37BDFB5C01E39311B195C0162BA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
-		65E26A208A9EEFCA3DFD01671790B725 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */; };
-		679032AB33F85043FD329D40842AC060 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6DF15BB75CA06D4E5FD00854A6402D77 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		725B787CB09E453041181BAD652261A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
-		72E911BF63B9D82060615173411CFDAD /* CZSlidingMenuBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AB16C8E3EEC09E310E241F8F59E307 /* CZSlidingMenuBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78315CB5377C27172D128363F4339DF3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8686E26053AFB59CF63229BA6A782F4B /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86D12580B0F6B4155B29815B8DEF04C6 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43CC8DC83F70A7BC6B4058706D97A3C2 /* NSString+CZSlidingMenuBar_StringExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 479E9F285085E878E1BE3BB901C7D3F4 /* NSString+CZSlidingMenuBar_StringExtension.m */; };
+		4BA287AE4C2B85BCF1D4F3918A47804D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		504AFD977F1A25E94C2B8B33C91256EC /* UIView+CZSlidingMenuBar_ViewExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 2351BE1E1D3E481026A7D6D56828B163 /* UIView+CZSlidingMenuBar_ViewExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5360AEE15B73E2EDBDA31EF424692F8C /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		562E8AEB947763D06DAA4D8C1FE10FCF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */; };
+		59401B67282CF5B499C11537B7819DCF /* CZSlidingMenuBarCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 72A1A2EAA00CA89EB286625D09CBBA05 /* CZSlidingMenuBarCollectionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EB990B7815459E2D61861FDD55FBC51 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6065CB62EB29A45AF7787A0F2DD95069 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */; };
+		6078BD4109CF967439820E140D6A9647 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
+		63822DF5B26A0E3194AF11F33D82CAC4 /* CZSlidingMenuBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 477A25EFC569A96CEE50CD3E855F55F0 /* CZSlidingMenuBarItem.m */; };
+		676E6920C3348FD0B864033ED23F88AA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		6C2685F47378C44A96A6EF34AEFE3C7A /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986CB32629319F7F2256662716334944 /* MASConstraint.m */; };
+		71A9EA2A8D45DCBF9C072C5ABCBEEF5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 509C1E8855181E97B9B90E02C912F561 /* UIView+CZSlidingMenuBar_ViewExtension.m */; };
+		72A9D19AD1074DD776BF2D817F004006 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
+		766203773109ED7376EF8930FD966725 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */; };
+		79EBC1E3ABB41FB0A265BF239EC6379C /* CZSlidingMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAE29EB2399563CA0F21AD7A0AB1AF /* CZSlidingMenuBar.m */; };
+		7FF0D8D70FD5FD736DB0D8EAEDD876CE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */; };
+		839953A5C1F72665847DB3C86E97AA0B /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		862765FBD61C03515EAE737A0AB5F666 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
+		8A0A1C3C13FF8DE85708ACB66AB446F7 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9586C6DD81627C939DFF9CF5E45137A2 /* Pods-CZSlidingMenuBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0790E6A5B0AB5CDE1009D24E0957855D /* Pods-CZSlidingMenuBar_Example-dummy.m */; };
-		9A8F6D11629309E652B2DED146F335AC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986CB32629319F7F2256662716334944 /* MASConstraint.m */; };
-		9EA9EF002EFC44EF80A5891233E0710B /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A52B9E33A76DF26CB38306537C874334 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B452FCBF9D1B825F2D91DB66285752E3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		B6011135B91541FABB16C4EA638EE3B1 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFA432A7DDDF4332CD5E6EB9245A7AAD /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0496BC170976DA5D627730B0877661E /* NSString+CZSlidingMenuBar_StringExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC3C27CE483DA7E8BE2E78B4EAD111B /* NSString+CZSlidingMenuBar_StringExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B20ED0B93275CC440ABBAF8B4A76BB72 /* CZSlidingMenuBarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7781A71EBABCD9DA7F6D8DF79612627A /* CZSlidingMenuBarCollectionCell.m */; };
 		B6CCFEB72185832B13AE9AB86A67F220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
-		C10F472B0084CC10D56533A00AC4332A /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */; };
-		CDD3135B27FB8083E66F9E8C1128D91F /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
-		D17FD331FE935DF9A60640398033DB37 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2DFAD3DED6F4BB60089FE7C1E645180 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13FC8E35EDBC629D62166DD797E6DE52 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E15676F6BE066EEBDBC8CB1B228FC519 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */; };
-		F077BC3F60E8FC13BC942EC263C13737 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */; };
-		F7BD030BD1B0BF0E8A2702427F16DCFA /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F85F461975597B0B778236D99538EFEA /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8D0DB7FC94DAD815F82572FBBEBDA19 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */; };
+		B7A5DF72F49802BC058166E4142E34BE /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C31E3C075BF77C190E6C1A1BE3720673 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA625E3E1F8C164AC47D73640C6184AD /* CZSlidingMenuBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C563CAE224CAD0D7BB09CB12A12B8 /* CZSlidingMenuBar-dummy.m */; };
+		CAE155CA424BB1B5375617EE9C2EA8B7 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE4FCA885D85BF7F05CC781116065264 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0D81DE2D66A4D59330A917228C86E26 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E83BAFA1382408AD2CC00739DE27EA55 /* CZSlidingMenuBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C18EEE4D2EBD155322178D9E542328C2 /* CZSlidingMenuBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8AFF0A18407F5760AA1576A76CAC6EA /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13FC8E35EDBC629D62166DD797E6DE52 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA4343509F96154C71D3445358F50367 /* CZSlidingMenuBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5933B464319FD6CDBE24C32FBB9F674E /* CZSlidingMenuBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF80BD44AEF76EC2A7BA1F8F2AC079F3 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */; };
+		F52B7D1F8C1BC76A17AD56484CC4DB13 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F85CEC59C0ED4C4F7D8E4F9E16D5677E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
+		FA56BE1BEA677FE69372197B5B0C0CD7 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE937DE71A73D4B7779FF934EC2373E2 /* Masonry-dummy.m */; };
 		FB88BACD955E71B9179C0D4DC29AE1E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
-		FD8314DDB5FD78996A961C28AB8FB796 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0BC254F1B8386055BA0223E27758C90D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7F7EA61F03CDAF51E21E964B7E1178D;
-			remoteInfo = Masonry;
-		};
 		5372A01A31969DAA5185F1140959A859 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E7F7EA61F03CDAF51E21E964B7E1178D;
+			remoteGlobalIDString = 838B472CA66DDC74BB9D26D6C67635D7;
+			remoteInfo = Masonry;
+		};
+		D7A6A0E12233D271DE129802B2D680FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 838B472CA66DDC74BB9D26D6C67635D7;
 			remoteInfo = Masonry;
 		};
 		F53013D2B34620224A224064D6CF71EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5B84261ED5ED5E699D7F7284C0FCC3DA;
+			remoteGlobalIDString = 2AFD0903717D0FA84F7EDBA3672C36B2;
 			remoteInfo = CZSlidingMenuBar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		059F74B4BA8661D77AABF81A43876149 /* UIColor+CZSlidingMenu_ColorExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZSlidingMenu_ColorExtension.m"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.m"; sourceTree = "<group>"; };
 		0790E6A5B0AB5CDE1009D24E0957855D /* Pods-CZSlidingMenuBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CZSlidingMenuBar_Example-dummy.m"; sourceTree = "<group>"; };
 		0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		0E05143B1A4CD1AB8EA20832F06C7682 /* Pods-CZSlidingMenuBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CZSlidingMenuBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0E5A51BBD9F9D880E0A0FF179B9CEB42 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		119E5E363A69E5695512859667A33517 /* CZSlidingMenuBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CZSlidingMenuBar.modulemap; sourceTree = "<group>"; };
 		13FC8E35EDBC629D62166DD797E6DE52 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
-		1735865CB5B920BAB3C28893B3938500 /* CZSlidingMenuBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBarItem.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarItem.h; sourceTree = "<group>"; };
-		18E3A42DA9B2A3E51E136832C2409D23 /* Pods_CZSlidingMenuBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CZSlidingMenuBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18E3A42DA9B2A3E51E136832C2409D23 /* Pods_CZSlidingMenuBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CZSlidingMenuBar_Tests.framework; path = "Pods-CZSlidingMenuBar_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC3C27CE483DA7E8BE2E78B4EAD111B /* NSString+CZSlidingMenuBar_StringExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CZSlidingMenuBar_StringExtension.h"; path = "CZSlidingMenuBar/Classes/NSString+CZSlidingMenuBar_StringExtension.h"; sourceTree = "<group>"; };
 		1BB4C400BE5E15140D3A656976BC17D0 /* Pods-CZSlidingMenuBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CZSlidingMenuBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		23C21D8C1DBB91CF3D12143A7AC92B4B /* CZSlidingMenuBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBarItem.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarItem.m; sourceTree = "<group>"; };
+		2351BE1E1D3E481026A7D6D56828B163 /* UIView+CZSlidingMenuBar_ViewExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CZSlidingMenuBar_ViewExtension.h"; path = "CZSlidingMenuBar/Classes/UIView+CZSlidingMenuBar_ViewExtension.h"; sourceTree = "<group>"; };
+		255213318F8BC113F78D382853B7EBB2 /* CZSlidingMenuBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CZSlidingMenuBar.xcconfig; sourceTree = "<group>"; };
 		2A278C54C00FE0EA63FF5053743ECEF2 /* Pods-CZSlidingMenuBar_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CZSlidingMenuBar_Example-resources.sh"; sourceTree = "<group>"; };
-		2CA8C874C78C3BD8C000FB2C83CDC968 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA8C874C78C3BD8C000FB2C83CDC968 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		3027ECF3675B7D92CFE998E7807ED8BD /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Masonry.modulemap; sourceTree = "<group>"; };
+		3027ECF3675B7D92CFE998E7807ED8BD /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Masonry.modulemap; sourceTree = "<group>"; };
 		303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		338E296311982A409D2E1F6E03C9B918 /* CZSlidingMenuBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CZSlidingMenuBar.xcconfig; sourceTree = "<group>"; };
 		344EC2A48A8D97D84A063618ED318AD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35121302C4245A00031C77E7492D6326 /* Pods-CZSlidingMenuBar_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CZSlidingMenuBar_Tests-resources.sh"; sourceTree = "<group>"; };
+		36C15CEBC5947332597F483CE1FF50D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		399C563CAE224CAD0D7BB09CB12A12B8 /* CZSlidingMenuBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CZSlidingMenuBar-dummy.m"; sourceTree = "<group>"; };
 		3B4B5D219BBC26881E14BEDCDE3F3B0C /* Pods-CZSlidingMenuBar_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CZSlidingMenuBar_Example-umbrella.h"; sourceTree = "<group>"; };
 		42D14A4173BD3E6FD7E1CE5DD3B3F2F5 /* Pods-CZSlidingMenuBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CZSlidingMenuBar_Example-frameworks.sh"; sourceTree = "<group>"; };
-		439500CA1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CZSlidingMenuBar_StringExtension.m"; path = "CZSlidingMenuBar/Classes/NSString+CZSlidingMenuBar_StringExtension.m"; sourceTree = "<group>"; };
-		439500CB1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CZSlidingMenuBar_StringExtension.h"; path = "CZSlidingMenuBar/Classes/NSString+CZSlidingMenuBar_StringExtension.h"; sourceTree = "<group>"; };
-		439500CE1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+CZSlidingMenuBar_ViewExtension.h"; path = "CZSlidingMenuBar/Classes/UIView+CZSlidingMenuBar_ViewExtension.h"; sourceTree = "<group>"; };
-		439500CF1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIView+CZSlidingMenuBar_ViewExtension.m"; path = "CZSlidingMenuBar/Classes/UIView+CZSlidingMenuBar_ViewExtension.m"; sourceTree = "<group>"; };
-		439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZSlidingMenu_ColorExtension.h"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.h"; sourceTree = "<group>"; };
-		439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CZSlidingMenu_ColorExtension.m"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.m"; sourceTree = "<group>"; };
-		439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBarCollectionCell.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.h; sourceTree = "<group>"; };
-		439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBarCollectionCell.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.m; sourceTree = "<group>"; };
+		477A25EFC569A96CEE50CD3E855F55F0 /* CZSlidingMenuBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBarItem.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarItem.m; sourceTree = "<group>"; };
+		479E9F285085E878E1BE3BB901C7D3F4 /* NSString+CZSlidingMenuBar_StringExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CZSlidingMenuBar_StringExtension.m"; path = "CZSlidingMenuBar/Classes/NSString+CZSlidingMenuBar_StringExtension.m"; sourceTree = "<group>"; };
+		509C1E8855181E97B9B90E02C912F561 /* UIView+CZSlidingMenuBar_ViewExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CZSlidingMenuBar_ViewExtension.m"; path = "CZSlidingMenuBar/Classes/UIView+CZSlidingMenuBar_ViewExtension.m"; sourceTree = "<group>"; };
 		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		5933B464319FD6CDBE24C32FBB9F674E /* CZSlidingMenuBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBarItem.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarItem.h; sourceTree = "<group>"; };
 		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		5F2664AFB4DEF568367F857F10CED306 /* Pods-CZSlidingMenuBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CZSlidingMenuBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
 		630AD59152CA5B982D3D23F4854E8430 /* Pods-CZSlidingMenuBar_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CZSlidingMenuBar_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		65FDDABCF6356A6C2133211ACA74D0A2 /* CZSlidingMenuBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CZSlidingMenuBar.modulemap; sourceTree = "<group>"; };
 		6851CC6CB851C7A361F8D05AC5DB1070 /* Pods-CZSlidingMenuBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CZSlidingMenuBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		7024D8029B4E9ADD6C9C02F151AF8B9C /* CZSlidingMenuBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBar.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBar.m; sourceTree = "<group>"; };
+		72A1A2EAA00CA89EB286625D09CBBA05 /* CZSlidingMenuBarCollectionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBarCollectionCell.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.h; sourceTree = "<group>"; };
 		76418D7E1DB4214B9070D0CC6A9A896A /* Pods-CZSlidingMenuBar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CZSlidingMenuBar_Tests-dummy.m"; sourceTree = "<group>"; };
+		7781A71EBABCD9DA7F6D8DF79612627A /* CZSlidingMenuBarCollectionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBarCollectionCell.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBarCollectionCell.m; sourceTree = "<group>"; };
 		77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		7A9E2EE0A12E78EB3873825D38E7303A /* Pods-CZSlidingMenuBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CZSlidingMenuBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		7F44A621BE24B87AEF75DD7193846188 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82F7DC275999A7C24D406A2ECA0B7F2F /* Pods-CZSlidingMenuBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CZSlidingMenuBar_Tests.modulemap"; sourceTree = "<group>"; };
+		82F7DC275999A7C24D406A2ECA0B7F2F /* Pods-CZSlidingMenuBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CZSlidingMenuBar_Tests.modulemap"; sourceTree = "<group>"; };
 		848A22C69638D55424736A7E57530671 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		89AB16C8E3EEC09E310E241F8F59E307 /* CZSlidingMenuBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CZSlidingMenuBar-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		986CB32629319F7F2256662716334944 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		98D67B90E777D26A54D9596B44FDA0EA /* Pods-CZSlidingMenuBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CZSlidingMenuBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9FABC61B8F55D01B2E7A55FA7B09963E /* CZSlidingMenuBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CZSlidingMenuBar-prefix.pch"; sourceTree = "<group>"; };
+		99F16CAE471D297844FB378FA7E86849 /* UIColor+CZSlidingMenu_ColorExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+CZSlidingMenu_ColorExtension.h"; path = "CZSlidingMenuBar/Classes/UIColor+CZSlidingMenu_ColorExtension.h"; sourceTree = "<group>"; };
 		A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		A2EBD66C319E27484EA52CE267A0D869 /* Pods-CZSlidingMenuBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CZSlidingMenuBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A6D6E0B119ACC097EC88CB0805175ED4 /* Pods_CZSlidingMenuBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CZSlidingMenuBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A875AF87408C1DD996D7C9F924E688E1 /* CZSlidingMenuBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CZSlidingMenuBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D6E0B119ACC097EC88CB0805175ED4 /* Pods_CZSlidingMenuBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CZSlidingMenuBar_Example.framework; path = "Pods-CZSlidingMenuBar_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A875AF87408C1DD996D7C9F924E688E1 /* CZSlidingMenuBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CZSlidingMenuBar.framework; path = CZSlidingMenuBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		B46B931EA89992FCF2733E356D33B18E /* CZSlidingMenuBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBar.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBar.h; sourceTree = "<group>"; };
+		B7F747A652EEA6CF9563131DB9E36031 /* CZSlidingMenuBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZSlidingMenuBar.h; path = CZSlidingMenuBar/Classes/CZSlidingMenuBar.h; sourceTree = "<group>"; };
 		B7F860EF6C9EF62BE4E2182648CC51C1 /* Pods-CZSlidingMenuBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CZSlidingMenuBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B81747A050394C10A299E9855F4456AD /* Pods-CZSlidingMenuBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CZSlidingMenuBar_Example.modulemap"; sourceTree = "<group>"; };
+		B81747A050394C10A299E9855F4456AD /* Pods-CZSlidingMenuBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CZSlidingMenuBar_Example.modulemap"; sourceTree = "<group>"; };
+		C18EEE4D2EBD155322178D9E542328C2 /* CZSlidingMenuBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CZSlidingMenuBar-umbrella.h"; sourceTree = "<group>"; };
 		C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		C5AAE29EB2399563CA0F21AD7A0AB1AF /* CZSlidingMenuBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZSlidingMenuBar.m; path = CZSlidingMenuBar/Classes/CZSlidingMenuBar.m; sourceTree = "<group>"; };
 		C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		CBDBC503ECEA57C3B77656A58841A0FC /* CZSlidingMenuBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CZSlidingMenuBar-dummy.m"; sourceTree = "<group>"; };
 		CD9460636A228DA2C8F5EC4A2AB7EBB6 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		DE5B95E4ECB92E349EE6A995B9E8AF2A /* CZSlidingMenuBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CZSlidingMenuBar-prefix.pch"; sourceTree = "<group>"; };
 		EB4D95A613F7E933D17461C4D337F9B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
@@ -166,30 +166,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E789DE9EB63B5ADE4934373F4A60EF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85CEC59C0ED4C4F7D8E4F9E16D5677E /* Foundation.framework in Frameworks */,
+				6078BD4109CF967439820E140D6A9647 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		440AE81955539548E69884D0AFE89F1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B6CCFEB72185832B13AE9AB86A67F220 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99BD0F43E730FEAE5F10492C8B0823BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				725B787CB09E453041181BAD652261A1 /* Foundation.framework in Frameworks */,
-				65E26A208A9EEFCA3DFD01671790B725 /* Masonry.framework in Frameworks */,
-				5CBB37BDFB5C01E39311B195C0162BA9 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A3514ABEF1C4FFF03DCCB64248F311E6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05659F3D9798894A535C9315C4F675D3 /* Foundation.framework in Frameworks */,
-				59DCA25462069AC62D6E3188CC5AD072 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,9 +191,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3004E8AFD0017E67BFB5BFC683BCBF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B404E05ED76D0BA611F849658E11705 /* Foundation.framework in Frameworks */,
+				07AE3C1691118F84DA612F79E7E03D76 /* Masonry.framework in Frameworks */,
+				72A9D19AD1074DD776BF2D817F004006 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3523FDBCE0F2641C78EB5EA34815530E /* CZSlidingMenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				B7F747A652EEA6CF9563131DB9E36031 /* CZSlidingMenuBar.h */,
+				C5AAE29EB2399563CA0F21AD7A0AB1AF /* CZSlidingMenuBar.m */,
+				72A1A2EAA00CA89EB286625D09CBBA05 /* CZSlidingMenuBarCollectionCell.h */,
+				7781A71EBABCD9DA7F6D8DF79612627A /* CZSlidingMenuBarCollectionCell.m */,
+				5933B464319FD6CDBE24C32FBB9F674E /* CZSlidingMenuBarItem.h */,
+				477A25EFC569A96CEE50CD3E855F55F0 /* CZSlidingMenuBarItem.m */,
+				1AC3C27CE483DA7E8BE2E78B4EAD111B /* NSString+CZSlidingMenuBar_StringExtension.h */,
+				479E9F285085E878E1BE3BB901C7D3F4 /* NSString+CZSlidingMenuBar_StringExtension.m */,
+				99F16CAE471D297844FB378FA7E86849 /* UIColor+CZSlidingMenu_ColorExtension.h */,
+				059F74B4BA8661D77AABF81A43876149 /* UIColor+CZSlidingMenu_ColorExtension.m */,
+				2351BE1E1D3E481026A7D6D56828B163 /* UIView+CZSlidingMenuBar_ViewExtension.h */,
+				509C1E8855181E97B9B90E02C912F561 /* UIView+CZSlidingMenuBar_ViewExtension.m */,
+				CDE9BA1D1BD99D845FA3B358AB924CDA /* Support Files */,
+			);
+			name = CZSlidingMenuBar;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		4B44D7EE0EF617836B4C7C518BF9FE45 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3523FDBCE0F2641C78EB5EA34815530E /* CZSlidingMenuBar */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		535B42677CD45E538AE2E8C3A80E16AB /* Pods-CZSlidingMenuBar_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,26 +275,12 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				EB17973808CEE75C2C98BE3722D38B62 /* Development Pods */,
+				4B44D7EE0EF617836B4C7C518BF9FE45 /* Development Pods */,
 				59511511C2B4BC905C933DCC67E365C4 /* Frameworks */,
 				E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */,
 				6D039D196CBDF3814E9815CA472AA1D7 /* Products */,
 				B9A94F88BE3F8C25A524B702ECDA9D99 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		A0C1A52D06A411FBCA91A3F61790BA7B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				119E5E363A69E5695512859667A33517 /* CZSlidingMenuBar.modulemap */,
-				338E296311982A409D2E1F6E03C9B918 /* CZSlidingMenuBar.xcconfig */,
-				CBDBC503ECEA57C3B77656A58841A0FC /* CZSlidingMenuBar-dummy.m */,
-				9FABC61B8F55D01B2E7A55FA7B09963E /* CZSlidingMenuBar-prefix.pch */,
-				89AB16C8E3EEC09E310E241F8F59E307 /* CZSlidingMenuBar-umbrella.h */,
-				0E5A51BBD9F9D880E0A0FF179B9CEB42 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/CZSlidingMenuBar";
 			sourceTree = "<group>";
 		};
 		A2A20986957FCCEF3865AFC2DAE207A8 /* Masonry */ = {
@@ -298,28 +313,8 @@
 				3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */,
 				AB2D74BCA437C31F2B7B0E2905262257 /* Support Files */,
 			);
+			name = Masonry;
 			path = Masonry;
-			sourceTree = "<group>";
-		};
-		A36A30601A2459F2197DD0D282F73065 /* CZSlidingMenuBar */ = {
-			isa = PBXGroup;
-			children = (
-				B46B931EA89992FCF2733E356D33B18E /* CZSlidingMenuBar.h */,
-				7024D8029B4E9ADD6C9C02F151AF8B9C /* CZSlidingMenuBar.m */,
-				1735865CB5B920BAB3C28893B3938500 /* CZSlidingMenuBarItem.h */,
-				23C21D8C1DBB91CF3D12143A7AC92B4B /* CZSlidingMenuBarItem.m */,
-				439500D61FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h */,
-				439500D71FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m */,
-				439500D21FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h */,
-				439500D31FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m */,
-				439500CE1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h */,
-				439500CF1FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m */,
-				439500CB1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.h */,
-				439500CA1FB0436900148E5B /* NSString+CZSlidingMenuBar_StringExtension.m */,
-				A0C1A52D06A411FBCA91A3F61790BA7B /* Support Files */,
-			);
-			name = CZSlidingMenuBar;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		AB02C94D765D376FFAFCAF1BEEEEE566 /* iOS */ = {
@@ -354,20 +349,26 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CDE9BA1D1BD99D845FA3B358AB924CDA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				65FDDABCF6356A6C2133211ACA74D0A2 /* CZSlidingMenuBar.modulemap */,
+				255213318F8BC113F78D382853B7EBB2 /* CZSlidingMenuBar.xcconfig */,
+				399C563CAE224CAD0D7BB09CB12A12B8 /* CZSlidingMenuBar-dummy.m */,
+				DE5B95E4ECB92E349EE6A995B9E8AF2A /* CZSlidingMenuBar-prefix.pch */,
+				C18EEE4D2EBD155322178D9E542328C2 /* CZSlidingMenuBar-umbrella.h */,
+				36C15CEBC5947332597F483CE1FF50D8 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CZSlidingMenuBar";
+			sourceTree = "<group>";
+		};
 		E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A2A20986957FCCEF3865AFC2DAE207A8 /* Masonry */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		EB17973808CEE75C2C98BE3722D38B62 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A36A30601A2459F2197DD0D282F73065 /* CZSlidingMenuBar */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		F4A1956E764BEC97DF4DCB6585A031BB /* Pods-CZSlidingMenuBar_Tests */ = {
@@ -399,20 +400,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C66F5700454B805EE5E327EE5DB71B4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				439500D01FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.h in Headers */,
-				439500D81FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.h in Headers */,
-				439500CD1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.h in Headers */,
-				377A4C17C7ADCC88099CDEAA7440C746 /* CZSlidingMenuBarItem.h in Headers */,
-				72E911BF63B9D82060615173411CFDAD /* CZSlidingMenuBar-umbrella.h in Headers */,
-				042426E4499456EFD64F6D720C96C434 /* CZSlidingMenuBar.h in Headers */,
-				439500D41FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		108C3A3001B1FDA55C65CCC68F8C640E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,57 +408,71 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		835FE46D59D50C03B02353E7E48BE2E6 /* Headers */ = {
+		8F095C43AC4288FEA958B6F25B398C48 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36764680722BA5327810BD74F7B19B29 /* MASCompositeConstraint.h in Headers */,
-				A52B9E33A76DF26CB38306537C874334 /* MASConstraint+Private.h in Headers */,
-				4D4F6D0B846791B30516332C50D1748D /* MASConstraint.h in Headers */,
-				D17FD331FE935DF9A60640398033DB37 /* MASConstraintMaker.h in Headers */,
-				2FB65A876D2CC91D8942F322319A4446 /* MASLayoutConstraint.h in Headers */,
-				D2DFAD3DED6F4BB60089FE7C1E645180 /* Masonry-umbrella.h in Headers */,
-				B6011135B91541FABB16C4EA638EE3B1 /* Masonry.h in Headers */,
-				6DF15BB75CA06D4E5FD00854A6402D77 /* MASUtilities.h in Headers */,
-				F7BD030BD1B0BF0E8A2702427F16DCFA /* MASViewAttribute.h in Headers */,
-				8686E26053AFB59CF63229BA6A782F4B /* MASViewConstraint.h in Headers */,
-				2D44A612A1CB4B674C32A3CA0A2D5FA7 /* NSArray+MASAdditions.h in Headers */,
-				679032AB33F85043FD329D40842AC060 /* NSArray+MASShorthandAdditions.h in Headers */,
-				86D12580B0F6B4155B29815B8DEF04C6 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
-				9EA9EF002EFC44EF80A5891233E0710B /* View+MASAdditions.h in Headers */,
-				78315CB5377C27172D128363F4339DF3 /* View+MASShorthandAdditions.h in Headers */,
-				F85F461975597B0B778236D99538EFEA /* ViewController+MASAdditions.h in Headers */,
+				CAE155CA424BB1B5375617EE9C2EA8B7 /* MASCompositeConstraint.h in Headers */,
+				C31E3C075BF77C190E6C1A1BE3720673 /* MASConstraint+Private.h in Headers */,
+				AFA432A7DDDF4332CD5E6EB9245A7AAD /* MASConstraint.h in Headers */,
+				5EB990B7815459E2D61861FDD55FBC51 /* MASConstraintMaker.h in Headers */,
+				839953A5C1F72665847DB3C86E97AA0B /* MASLayoutConstraint.h in Headers */,
+				E8AFF0A18407F5760AA1576A76CAC6EA /* Masonry-umbrella.h in Headers */,
+				5360AEE15B73E2EDBDA31EF424692F8C /* Masonry.h in Headers */,
+				B7A5DF72F49802BC058166E4142E34BE /* MASUtilities.h in Headers */,
+				F52B7D1F8C1BC76A17AD56484CC4DB13 /* MASViewAttribute.h in Headers */,
+				241263961CEA1CCD9AAB708B61551A69 /* MASViewConstraint.h in Headers */,
+				4BA287AE4C2B85BCF1D4F3918A47804D /* NSArray+MASAdditions.h in Headers */,
+				E0D81DE2D66A4D59330A917228C86E26 /* NSArray+MASShorthandAdditions.h in Headers */,
+				204C62463CA5262F7D9A93BED2E428F2 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				DE4FCA885D85BF7F05CC781116065264 /* View+MASAdditions.h in Headers */,
+				8A0A1C3C13FF8DE85708ACB66AB446F7 /* View+MASShorthandAdditions.h in Headers */,
+				317A15296AD8A5BCD24A4956F85CF6C0 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF065966C9D1D36B7965B7B05BF7A592 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E83BAFA1382408AD2CC00739DE27EA55 /* CZSlidingMenuBar-umbrella.h in Headers */,
+				33C965A608BFCC2D66017B6F8E152B2F /* CZSlidingMenuBar.h in Headers */,
+				59401B67282CF5B499C11537B7819DCF /* CZSlidingMenuBarCollectionCell.h in Headers */,
+				EA4343509F96154C71D3445358F50367 /* CZSlidingMenuBarItem.h in Headers */,
+				B0496BC170976DA5D627730B0877661E /* NSString+CZSlidingMenuBar_StringExtension.h in Headers */,
+				2046564EC8DA65757315129A8A4955FE /* UIColor+CZSlidingMenu_ColorExtension.h in Headers */,
+				504AFD977F1A25E94C2B8B33C91256EC /* UIView+CZSlidingMenuBar_ViewExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5B84261ED5ED5E699D7F7284C0FCC3DA /* CZSlidingMenuBar */ = {
+		2AFD0903717D0FA84F7EDBA3672C36B2 /* CZSlidingMenuBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C226630FD22DBE7B8192152C146B8DEA /* Build configuration list for PBXNativeTarget "CZSlidingMenuBar" */;
+			buildConfigurationList = 984A229CAA517B83A816649DAA4B58E9 /* Build configuration list for PBXNativeTarget "CZSlidingMenuBar" */;
 			buildPhases = (
-				4A672ED659A2F97D13A5EB62D0AC9C26 /* Sources */,
-				99BD0F43E730FEAE5F10492C8B0823BB /* Frameworks */,
-				0C66F5700454B805EE5E327EE5DB71B4 /* Headers */,
+				14945838F307075F37778E59AD4AD5BA /* Sources */,
+				D3004E8AFD0017E67BFB5BFC683BCBF9 /* Frameworks */,
+				FF065966C9D1D36B7965B7B05BF7A592 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6FB48345C078D5C12F9D45F12BCA4D0E /* PBXTargetDependency */,
+				1C7724BFA33EA0E4CC0667E6D81AF99B /* PBXTargetDependency */,
 			);
 			name = CZSlidingMenuBar;
 			productName = CZSlidingMenuBar;
 			productReference = A875AF87408C1DD996D7C9F924E688E1 /* CZSlidingMenuBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E7F7EA61F03CDAF51E21E964B7E1178D /* Masonry */ = {
+		838B472CA66DDC74BB9D26D6C67635D7 /* Masonry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1238ADAF26DA38B2340FFCDF5C73DD17 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildConfigurationList = 2A96905AFA96630156275A6A16EF001F /* Build configuration list for PBXNativeTarget "Masonry" */;
 			buildPhases = (
-				70A0CB87C6269F31DE243F85B3552A76 /* Sources */,
-				A3514ABEF1C4FFF03DCCB64248F311E6 /* Frameworks */,
-				835FE46D59D50C03B02353E7E48BE2E6 /* Headers */,
+				70BBAAB29F207F9859550374E0AD9B16 /* Sources */,
+				0E789DE9EB63B5ADE4934373F4A60EF3 /* Frameworks */,
+				8F095C43AC4288FEA958B6F25B398C48 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -539,8 +540,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B84261ED5ED5E699D7F7284C0FCC3DA /* CZSlidingMenuBar */,
-				E7F7EA61F03CDAF51E21E964B7E1178D /* Masonry */,
+				2AFD0903717D0FA84F7EDBA3672C36B2 /* CZSlidingMenuBar */,
+				838B472CA66DDC74BB9D26D6C67635D7 /* Masonry */,
 				EDA6831C2D4D03131E55E74B89ED1494 /* Pods-CZSlidingMenuBar_Example */,
 				F6022BA22D406663818186D7606DC2DF /* Pods-CZSlidingMenuBar_Tests */,
 			);
@@ -548,17 +549,17 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4A672ED659A2F97D13A5EB62D0AC9C26 /* Sources */ = {
+		14945838F307075F37778E59AD4AD5BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				439500D51FB0456600148E5B /* UIColor+CZSlidingMenu_ColorExtension.m in Sources */,
-				439500D11FB044FD00148E5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */,
-				5C98F9B970EE753BB8C4BFCA034AC806 /* CZSlidingMenuBarItem.m in Sources */,
-				439500CC1FB0436A00148E5B /* NSString+CZSlidingMenuBar_StringExtension.m in Sources */,
-				439500D91FB0660E00148E5B /* CZSlidingMenuBarCollectionCell.m in Sources */,
-				5BDD7D80E76E1213F2D3525CEFE08198 /* CZSlidingMenuBar-dummy.m in Sources */,
-				4876ECE8D8EF9B516E34DA8279A82F0A /* CZSlidingMenuBar.m in Sources */,
+				CA625E3E1F8C164AC47D73640C6184AD /* CZSlidingMenuBar-dummy.m in Sources */,
+				79EBC1E3ABB41FB0A265BF239EC6379C /* CZSlidingMenuBar.m in Sources */,
+				B20ED0B93275CC440ABBAF8B4A76BB72 /* CZSlidingMenuBarCollectionCell.m in Sources */,
+				63822DF5B26A0E3194AF11F33D82CAC4 /* CZSlidingMenuBarItem.m in Sources */,
+				43CC8DC83F70A7BC6B4058706D97A3C2 /* NSString+CZSlidingMenuBar_StringExtension.m in Sources */,
+				077A786E31FFD86A85E23B1BF633A2D7 /* UIColor+CZSlidingMenu_ColorExtension.m in Sources */,
+				71A9EA2A8D45DCBF9C072C5ABCBEEF5B /* UIView+CZSlidingMenuBar_ViewExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,21 +571,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70A0CB87C6269F31DE243F85B3552A76 /* Sources */ = {
+		70BBAAB29F207F9859550374E0AD9B16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C10F472B0084CC10D56533A00AC4332A /* MASCompositeConstraint.m in Sources */,
-				9A8F6D11629309E652B2DED146F335AC /* MASConstraint.m in Sources */,
-				2D3B865511C62A9500E71FB0620ADFE8 /* MASConstraintMaker.m in Sources */,
-				F8D0DB7FC94DAD815F82572FBBEBDA19 /* MASLayoutConstraint.m in Sources */,
-				38894DE817DEEC16783C61B49B792B7D /* Masonry-dummy.m in Sources */,
-				E15676F6BE066EEBDBC8CB1B228FC519 /* MASViewAttribute.m in Sources */,
-				2B744C4B71246D20AE3D7C7AB3084822 /* MASViewConstraint.m in Sources */,
-				CDD3135B27FB8083E66F9E8C1128D91F /* NSArray+MASAdditions.m in Sources */,
-				B452FCBF9D1B825F2D91DB66285752E3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				F077BC3F60E8FC13BC942EC263C13737 /* View+MASAdditions.m in Sources */,
-				FD8314DDB5FD78996A961C28AB8FB796 /* ViewController+MASAdditions.m in Sources */,
+				562E8AEB947763D06DAA4D8C1FE10FCF /* MASCompositeConstraint.m in Sources */,
+				6C2685F47378C44A96A6EF34AEFE3C7A /* MASConstraint.m in Sources */,
+				7FF0D8D70FD5FD736DB0D8EAEDD876CE /* MASConstraintMaker.m in Sources */,
+				6065CB62EB29A45AF7787A0F2DD95069 /* MASLayoutConstraint.m in Sources */,
+				FA56BE1BEA677FE69372197B5B0C0CD7 /* Masonry-dummy.m in Sources */,
+				766203773109ED7376EF8930FD966725 /* MASViewAttribute.m in Sources */,
+				EF80BD44AEF76EC2A7BA1F8F2AC079F3 /* MASViewConstraint.m in Sources */,
+				061D26952031EB7752F30565ABAB858D /* NSArray+MASAdditions.m in Sources */,
+				676E6920C3348FD0B864033ED23F88AA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1DF9D7DF7D0276490DD6C2152DAD89B8 /* View+MASAdditions.m in Sources */,
+				862765FBD61C03515EAE737A0AB5F666 /* ViewController+MASAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,61 +600,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C7724BFA33EA0E4CC0667E6D81AF99B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 838B472CA66DDC74BB9D26D6C67635D7 /* Masonry */;
+			targetProxy = D7A6A0E12233D271DE129802B2D680FD /* PBXContainerItemProxy */;
+		};
 		1E318BCA476A41026D98C45CD9769429 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CZSlidingMenuBar;
-			target = 5B84261ED5ED5E699D7F7284C0FCC3DA /* CZSlidingMenuBar */;
+			target = 2AFD0903717D0FA84F7EDBA3672C36B2 /* CZSlidingMenuBar */;
 			targetProxy = F53013D2B34620224A224064D6CF71EA /* PBXContainerItemProxy */;
 		};
 		254E3200763CC0913D6A253E9929E056 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
-			target = E7F7EA61F03CDAF51E21E964B7E1178D /* Masonry */;
+			target = 838B472CA66DDC74BB9D26D6C67635D7 /* Masonry */;
 			targetProxy = 5372A01A31969DAA5185F1140959A859 /* PBXContainerItemProxy */;
-		};
-		6FB48345C078D5C12F9D45F12BCA4D0E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = E7F7EA61F03CDAF51E21E964B7E1178D /* Masonry */;
-			targetProxy = 0BC254F1B8386055BA0223E27758C90D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		113EBB2A315B8B8632579C5AB4D23519 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6851CC6CB851C7A361F8D05AC5DB1070 /* Pods-CZSlidingMenuBar_Tests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CZSlidingMenuBar_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		162A37E5DE0003F1D973B1828CBB8FB2 /* Release */ = {
+		026C9E50E637575AB34AC49772179F9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BB4C400BE5E15140D3A656976BC17D0 /* Pods-CZSlidingMenuBar_Example.release.xcconfig */;
 			buildSettings = {
@@ -668,7 +636,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Pods-CZSlidingMenuBar_Example.modulemap";
@@ -686,7 +654,277 @@
 			};
 			name = Release;
 		};
-		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+		0DF12F8F02ED6C1AC9E2292045AE675C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		19F25C76BC68266C0F7D3AE602C4E10F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 255213318F8BC113F78D382853B7EBB2 /* CZSlidingMenuBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CZSlidingMenuBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar.modulemap";
+				PRODUCT_NAME = CZSlidingMenuBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5EFDF52F0D2D62BB75D9F81C1DF06926 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6851CC6CB851C7A361F8D05AC5DB1070 /* Pods-CZSlidingMenuBar_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CZSlidingMenuBar_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		62E3FFFA9DBA55BD0BA473A33514D3E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2EBD66C319E27484EA52CE267A0D869 /* Pods-CZSlidingMenuBar_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Pods-CZSlidingMenuBar_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CZSlidingMenuBar_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		810F45EF32FB83162AB1DBC26756C8C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F860EF6C9EF62BE4E2182648CC51C1 /* Pods-CZSlidingMenuBar_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CZSlidingMenuBar_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F7E548F1DCD2C96009C181AEF909081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D1E04CF068E2684DB34B2C7D8466F118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 255213318F8BC113F78D382853B7EBB2 /* CZSlidingMenuBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CZSlidingMenuBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar.modulemap";
+				PRODUCT_NAME = CZSlidingMenuBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -735,7 +973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -746,251 +984,14 @@
 			};
 			name = Debug;
 		};
-		67289BB40C104694FE108FF808682A6B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 338E296311982A409D2E1F6E03C9B918 /* CZSlidingMenuBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CZSlidingMenuBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar.modulemap";
-				PRODUCT_NAME = CZSlidingMenuBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7062611C7E064C9DA70B750C84D140B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 338E296311982A409D2E1F6E03C9B918 /* CZSlidingMenuBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CZSlidingMenuBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CZSlidingMenuBar/CZSlidingMenuBar.modulemap";
-				PRODUCT_NAME = CZSlidingMenuBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		809EBE9504A2857B6769FB4434BC0641 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C2CCCE9541A3E150955BA00013F624D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DD329AAF5E488055257F7E3FAE06A73B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2EBD66C319E27484EA52CE267A0D869 /* Pods-CZSlidingMenuBar_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Example/Pods-CZSlidingMenuBar_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CZSlidingMenuBar_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FA420BC52A2BDCC37DE6A2FB7658F1AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7F860EF6C9EF62BE4E2182648CC51C1 /* Pods-CZSlidingMenuBar_Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CZSlidingMenuBar_Tests/Pods-CZSlidingMenuBar_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CZSlidingMenuBar_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1238ADAF26DA38B2340FFCDF5C73DD17 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+		2A96905AFA96630156275A6A16EF001F /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2CCCE9541A3E150955BA00013F624D8 /* Debug */,
-				809EBE9504A2857B6769FB4434BC0641 /* Release */,
+				0DF12F8F02ED6C1AC9E2292045AE675C /* Debug */,
+				8F7E548F1DCD2C96009C181AEF909081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -998,8 +999,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
-				731DC216E1A58545B559F6E0A2418060 /* Release */,
+				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
+				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1007,17 +1008,17 @@
 		7951A42710EC2F0AD7D285C9D4CE660F /* Build configuration list for PBXNativeTarget "Pods-CZSlidingMenuBar_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA420BC52A2BDCC37DE6A2FB7658F1AC /* Debug */,
-				113EBB2A315B8B8632579C5AB4D23519 /* Release */,
+				810F45EF32FB83162AB1DBC26756C8C8 /* Debug */,
+				5EFDF52F0D2D62BB75D9F81C1DF06926 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C226630FD22DBE7B8192152C146B8DEA /* Build configuration list for PBXNativeTarget "CZSlidingMenuBar" */ = {
+		984A229CAA517B83A816649DAA4B58E9 /* Build configuration list for PBXNativeTarget "CZSlidingMenuBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7062611C7E064C9DA70B750C84D140B3 /* Debug */,
-				67289BB40C104694FE108FF808682A6B /* Release */,
+				19F25C76BC68266C0F7D3AE602C4E10F /* Debug */,
+				D1E04CF068E2684DB34B2C7D8466F118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1025,8 +1026,8 @@
 		F8C037AEF7637079C305A35B3B82ECF3 /* Build configuration list for PBXNativeTarget "Pods-CZSlidingMenuBar_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD329AAF5E488055257F7E3FAE06A73B /* Debug */,
-				162A37E5DE0003F1D973B1828CBB8FB2 /* Release */,
+				62E3FFFA9DBA55BD0BA473A33514D3E8 /* Debug */,
+				026C9E50E637575AB34AC49772179F9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

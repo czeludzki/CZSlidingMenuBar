@@ -1,5 +1,5 @@
 PODS:
-  - CZSlidingMenuBar (0.1.0):
+  - CZSlidingMenuBar (1.1.5):
     - Masonry
   - Masonry (1.1.0)
 
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CZSlidingMenuBar: 0c2c91b6b76003220ded0afe0b03d29c9737b75e
+  CZSlidingMenuBar: 6cf8b9ade95f95d92f4d4d7706bec888bfc03d36
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: c1bfd58885abe043b791c054f8d07cecb40ec809
