@@ -8,13 +8,13 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (CZSlidingMenuBar_ViewExtension)
-@property (nonatomic) CGFloat fs_width;
-@property (nonatomic) CGFloat fs_height;
+@property (nonatomic) CGFloat CSM_width;
+@property (nonatomic) CGFloat CSM_height;
 
-@property (nonatomic) CGFloat fs_top;
-@property (nonatomic) CGFloat fs_left;
-@property (nonatomic) CGFloat fs_bottom;
-@property (nonatomic) CGFloat fs_right;
-@property (nonatomic) CGFloat fs_centerX;
-@property (nonatomic) CGFloat fs_centerY;
+@property (nonatomic) CGFloat CSM_top;
+@property (nonatomic) CGFloat CSM_left;
+@property (nonatomic) CGFloat CSM_bottom;
+@property (nonatomic) CGFloat CSM_right;
+@property (nonatomic) CGFloat CSM_centerX;
+@property (nonatomic) CGFloat CSM_centerY;
 @end

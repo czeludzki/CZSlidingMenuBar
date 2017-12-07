@@ -9,7 +9,7 @@
 
 @implementation NSString (CZSlidingMenuBar_StringExtension)
 
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
+- (CGSize)CSM_sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
 {
     NSDictionary *dict = @{NSFontAttributeName: font};
     CGSize textSize = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;

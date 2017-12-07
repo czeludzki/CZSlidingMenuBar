@@ -11,13 +11,13 @@
 /**
  0 - 255
  */
-- (CGFloat)r;
+- (CGFloat)CSM_r;
 /**
  0 - 255
  */
-- (CGFloat)g;
+- (CGFloat)CSM_g;
 /**
  0 - 255
  */
-- (CGFloat)b;
+- (CGFloat)CSM_b;
 @end

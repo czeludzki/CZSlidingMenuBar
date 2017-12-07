@@ -8,7 +8,7 @@
 #import "UIColor+CZSlidingMenu_ColorExtension.h"
 
 @implementation UIColor (CZSlidingMenu_ColorExtension)
-- (CGFloat)r
+- (CGFloat)CSM_r
 {
     CGColorRef color = self.CGColor;
     CGFloat R = 0;
@@ -20,7 +20,7 @@
     return R;
 }
 
-- (CGFloat)g
+- (CGFloat)CSM_g
 {
     CGColorRef color = self.CGColor;
     CGFloat G = 0;
@@ -32,7 +32,7 @@
     return G;
 }
 
-- (CGFloat)b
+- (CGFloat)CSM_b
 {
     CGColorRef color = self.CGColor;
     CGFloat B = 0;

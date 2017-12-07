@@ -264,8 +264,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         button.tintColor = self.selectedColor;
         button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
         [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(cell.fs_width);
-            make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.fs_centerX);
+            make.width.mas_equalTo(cell.CSM_width);
+            make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.CSM_centerX);
         }];
         [UIView animateWithDuration:.3f animations:^{
             [weakSelf layoutIfNeeded];
@@ -276,7 +276,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectedItem:atIndex:)]) {
         [self.delegate slidingMenuBar:self didSelectedItem:self.items[index] atIndex:index];
     }
-    self.startX = self.linkedScrollView.fs_width * index;
+    self.startX = self.linkedScrollView.CSM_width * index;
     self.btnOnClick = NO;
 }
 
@@ -307,7 +307,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     NSInteger targetIndex = 0;
     NSInteger sourceIndex = 0;
     
-    CGFloat progress = fabs(_offsetX - self.startX) / self.linkedScrollView.fs_width;    // 滑动进度
+    CGFloat progress = fabs(_offsetX - self.startX) / self.linkedScrollView.CSM_width;    // 滑动进度
     
     if (_offsetX > self.startX) {   // 向右
         if (progress != 0) {
@@ -315,7 +315,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             targetIndex = sourceIndex + 1;
             if (progress >= 1) {
                 _selectedIndex++;
-                self.startX += self.linkedScrollView.fs_width;
+                self.startX += self.linkedScrollView.CSM_width;
             }
         }
         if (targetIndex >= self.items.count) return;
@@ -328,7 +328,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             targetIndex = sourceIndex - 1;
             if (progress >= 1) {
                 _selectedIndex--;
-                self.startX -= self.linkedScrollView.fs_width;
+                self.startX -= self.linkedScrollView.CSM_width;
             }
         }
         if (targetIndex < 0) return;
@@ -339,8 +339,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         return;
     }
 
-    CGFloat scrollLineW = sourecCell.fs_width + (targetCell.fs_width - sourecCell.fs_width) * progress;
-    CGFloat scrollLineCenterX = sourecCell.fs_centerX + ((targetCell.fs_centerX - sourecCell.fs_centerX) * progress);
+    CGFloat scrollLineW = sourecCell.CSM_width + (targetCell.CSM_width - sourecCell.CSM_width) * progress;
+    CGFloat scrollLineCenterX = sourecCell.CSM_centerX + ((targetCell.CSM_centerX - sourecCell.CSM_centerX) * progress);
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(scrollLineW);
         make.centerX.mas_equalTo(-self.frame.size.width * .5f + scrollLineCenterX);
@@ -348,13 +348,13 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     
     // 改变颜色
     // RGB值获取
-    CGFloat selectedR = [self.selectedColor r];
-    CGFloat selectedG = [self.selectedColor g];
-    CGFloat selectedB = [self.selectedColor b];
+    CGFloat selectedR = [self.selectedColor CSM_r];
+    CGFloat selectedG = [self.selectedColor CSM_g];
+    CGFloat selectedB = [self.selectedColor CSM_b];
     
-    CGFloat defaultR = [self.barTintColor r];
-    CGFloat defaultG = [self.barTintColor g];
-    CGFloat defaultB = [self.barTintColor b];
+    CGFloat defaultR = [self.barTintColor CSM_r];
+    CGFloat defaultG = [self.barTintColor CSM_g];
+    CGFloat defaultB = [self.barTintColor CSM_b];
     
     // start + (end - start) * progress
     UIColor *nextColor = kRGBColor(defaultR + (selectedR - defaultR)*progress, defaultG + (selectedG - defaultG)*progress, defaultB + (selectedB - defaultB)*progress);

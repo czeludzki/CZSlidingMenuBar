@@ -8,5 +8,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (CZSlidingMenuBar_StringExtension)
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
+- (CGSize)CSM_sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
 @end

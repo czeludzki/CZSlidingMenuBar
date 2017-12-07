@@ -8,87 +8,87 @@
 #import "UIView+CZSlidingMenuBar_ViewExtension.h"
 
 @implementation UIView (CZSlidingMenuBar_ViewExtension)
-- (CGFloat)fs_width
+- (CGFloat)CSM_width
 {
     return CGRectGetWidth(self.frame);
 }
 
-- (void)setFs_width:(CGFloat)fs_width
+- (void)setCSM_width:(CGFloat)CSM_width
 {
-    self.frame = CGRectMake(self.fs_left, self.fs_top, fs_width, self.fs_height);
+    self.frame = CGRectMake(self.CSM_left, self.CSM_top, CSM_width, self.CSM_height);
 }
 
-- (CGFloat)fs_height
+- (CGFloat)CSM_height
 {
     return CGRectGetHeight(self.frame);
 }
 
-- (void)setFs_height:(CGFloat)fs_height
+- (void)setCSM_height:(CGFloat)CSM_height
 {
-    self.frame = CGRectMake(self.fs_left, self.fs_top, self.fs_width, fs_height);
+    self.frame = CGRectMake(self.CSM_left, self.CSM_top, self.CSM_width, CSM_height);
 }
 
-- (CGFloat)fs_top
+- (CGFloat)CSM_top
 {
     return CGRectGetMinY(self.frame);
 }
 
-- (void)setFs_top:(CGFloat)fs_top
+- (void)setCSM_top:(CGFloat)CSM_top
 {
-    self.frame = CGRectMake(self.fs_left, fs_top, self.fs_width, self.fs_height);
+    self.frame = CGRectMake(self.CSM_left, CSM_top, self.CSM_width, self.CSM_height);
 }
 
-- (CGFloat)fs_bottom
+- (CGFloat)CSM_bottom
 {
     return CGRectGetMaxY(self.frame);
 }
 
-- (void)setFs_bottom:(CGFloat)fs_bottom
+- (void)setCSM_bottom:(CGFloat)CSM_bottom
 {
-    self.fs_top = fs_bottom - self.fs_height;
+    self.CSM_top = CSM_bottom - self.CSM_height;
 }
 
-- (CGFloat)fs_left
+- (CGFloat)CSM_left
 {
     return CGRectGetMinX(self.frame);
 }
 
-- (void)setFs_left:(CGFloat)fs_left
+- (void)setCSM_left:(CGFloat)CSM_left
 {
-    self.frame = CGRectMake(fs_left, self.fs_top, self.fs_width, self.fs_height);
+    self.frame = CGRectMake(CSM_left, self.CSM_top, self.CSM_width, self.CSM_height);
 }
 
-- (CGFloat)fs_right
+- (CGFloat)CSM_right
 {
     return CGRectGetMaxX(self.frame);
 }
 
-- (void)setFs_right:(CGFloat)fs_right
+- (void)setCSM_right:(CGFloat)CSM_right
 {
-    self.fs_left = self.fs_right - self.fs_width;
+    self.CSM_left = self.CSM_right - self.CSM_width;
 }
 
-- (CGFloat)fs_centerX
+- (CGFloat)CSM_centerX
 {
     return self.center.x;
 }
 
-- (void)setFs_centerX:(CGFloat)fs_centerX
+- (void)setCSM_centerX:(CGFloat)CSM_centerX
 {
     CGPoint center = self.center;
-    center.x = fs_centerX;
+    center.x = CSM_centerX;
     self.center = center;
 }
 
-- (CGFloat)fs_centerY
+- (CGFloat)CSM_centerY
 {
     return self.center.y;
 }
 
-- (void)setFs_centerY:(CGFloat)fs_centerY
+- (void)setCSM_centerY:(CGFloat)CSM_centerY
 {
     CGPoint center = self.center;
-    center.y = fs_centerY;
+    center.y = CSM_centerY;
     self.center = center;
 }
 @end
