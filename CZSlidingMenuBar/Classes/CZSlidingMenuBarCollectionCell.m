@@ -25,6 +25,19 @@
             make.top.left.right.mas_equalTo(0);
             make.bottom.mas_equalTo(2);
         }];
+        
+        UIView *nipple = [[UIView alloc] init];
+        [self.contentView addSubview:nipple];
+        self.nipple = nipple;
+        [nipple mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(btn.titleLabel.mas_right).mas_offset(0);
+            make.bottom.mas_equalTo(btn.titleLabel.mas_top).mas_offset(0);
+            make.height.width.mas_equalTo(6);
+        }];
+        nipple.layer.cornerRadius = 3;
+        nipple.layer.masksToBounds = YES;
+        nipple.hidden = YES;
+        nipple.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -38,6 +51,7 @@
     self.contentButton.contentEdgeInsets = _item.contentEdgeInsets;
     self.contentButton.titleEdgeInsets = _item.titleEdgeInsets;
     self.contentButton.imageEdgeInsets = _item.imageEdgeInsets;
+    self.nipple.hidden = !_item.showNipple;
 }
 
 @end

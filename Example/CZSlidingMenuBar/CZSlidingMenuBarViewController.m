@@ -37,10 +37,12 @@
     for (int i = 0; i < self.randomColors.count; i++) {
         CZSlidingMenuBarItem *item = [[CZSlidingMenuBarItem alloc] init];
         item.title = [NSString stringWithFormat:@"%i%i%i",i,i,i];
+        item.showNipple = i % 2 == 0;
         [items addObject:item];
     }
     CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:items];
-    slidingMenuBar.transformScale = 1.5;
+    slidingMenuBar.nippleColor = [UIColor blueColor];
+    slidingMenuBar.transformScale = 1;
     slidingMenuBar.delegate = self;
     slidingMenuBar.selectedColor = [UIColor colorWithRed:.0f green:.9f blue:.9f alpha:1];
     slidingMenuBar.barTintColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
@@ -71,6 +73,15 @@
     
     // 设置 collectionView 为 menuBar 的联动视图
     slidingMenuBar.linkedScrollView = self.collectionView;
+    
+    
+    // ReloadNipple 方法测试
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        for (CZSlidingMenuBarItem *i in slidingMenuBar.items) {
+            i.showNipple = NO;
+        }
+        [slidingMenuBar reloadItemsNippleState];
+    });
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout

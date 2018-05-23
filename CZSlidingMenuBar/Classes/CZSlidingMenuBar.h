@@ -36,6 +36,10 @@
  */
 @property (strong, nonatomic) UIColor *selectedColor;
 /**
+ 自己翻译
+ */
+@property (strong, nonatomic) UIColor *nippleColor;
+/**
  font
  */
 @property (strong, nonatomic) UIFont *itemFont;
@@ -55,9 +59,15 @@
     if 1 ~ 8, item宽度 = bar.width / 1 ~ 8  ----> |  a  | aaa |aaaaa|
  */
 @property (assign, nonatomic) NSInteger averageBarWidth;
-
-- (void)selectItemAtIndex:(NSInteger)index;
+#pragma mark - initialization
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
+
+#pragma mark - helper
+- (void)selectItemAtIndex:(NSInteger)index;
+/**
+ 你可能会根据需求随时改变 CZSlidingMenuBarItem.showNipple 的属性, 但 CZSlidingMenuBar 并不知道你的业务细则, 所以提供 reloadItemsNippleState 方法 将nipple显示变更响应到视图上
+ */
+- (void)reloadItemsNippleState;
 @end
 

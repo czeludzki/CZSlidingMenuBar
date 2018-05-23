@@ -11,4 +11,5 @@
 @interface CZSlidingMenuBarCollectionCell : UICollectionViewCell
 @property (nonatomic, strong) CZSlidingMenuBarItem *item;
 @property (nonatomic, weak) UIButton *contentButton;
+@property (nonatomic, weak) UIView *nipple;
 @end

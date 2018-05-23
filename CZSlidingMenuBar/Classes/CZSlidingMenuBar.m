@@ -173,6 +173,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     CZSlidingMenuBarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID forIndexPath:indexPath];
     cell.item = self.items[indexPath.item];
     cell.contentButton.titleLabel.font = self.itemFont;
+    cell.nipple.backgroundColor = self.nippleColor;
     return cell;
 }
 
@@ -220,6 +221,15 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 }
 
 #pragma mark - Helper
+- (void)reloadItemsNippleState
+{
+    NSArray <NSIndexPath *>*visiblecell_idx = [self.collectionView indexPathsForVisibleItems];
+    for (NSIndexPath *idx in visiblecell_idx) {
+        CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:idx];
+        cell.nipple.hidden = !self.items[idx.item].showNipple;
+    }
+}
+
 - (void)depolyItemSizes
 {
     self.itemSizes = [NSMutableArray array];
