@@ -19,6 +19,7 @@
 @interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *scrollLine;
+@property (weak, nonatomic) UIView *bottomLine;
 @property (weak, nonatomic) CADisplayLink *displayLink;
 @property (strong, nonatomic) NSMutableArray <NSValue *>*itemSizes;
 // 记录点击状态,适时禁用contentOffset的监听
@@ -38,7 +39,9 @@
 @end
 
 @implementation CZSlidingMenuBar
-@synthesize selectedColor = _selectedColor;
+@synthesize selectedColor   = _selectedColor;
+@synthesize bottomLineColor = _bottomLineColor;
+
 
 static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollectionCellID";
 
@@ -50,10 +53,25 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     return _selectedColor;
 }
 
+
+- (UIColor *)bottomLineColor
+{
+    if (!_bottomLineColor) {
+        _bottomLineColor = [UIColor clearColor];
+    }
+    return _bottomLineColor;
+}
+
 - (void)setSelectedColor:(UIColor *)selectedColor
 {
     _selectedColor = selectedColor;
     self.scrollLine.backgroundColor = _selectedColor;
+}
+
+- (void)setBottomLineColor:(UIColor *)bottomLineColor
+{
+    _bottomLineColor = bottomLineColor;
+    self.bottomLine.backgroundColor = _bottomLineColor;
 }
 
 - (UIColor *)barTintColor
@@ -107,6 +125,18 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         _averageBarWidth = 0;
         _itemFont = [UIFont systemFontOfSize:17];
         
+        UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectZero];
+        bottomLine.backgroundColor = self.bottomLineColor;
+        [self addSubview:bottomLine];
+        self.bottomLine = bottomLine;
+        [bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_offset(0);
+            make.right.mas_offset(0);
+            make.left.mas_offset(0);
+            make.height.mas_equalTo(2);
+            //            make.width.mas_equalTo(self);
+        }];
+        
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -121,6 +151,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
         [collectionView registerClass:[CZSlidingMenuBarCollectionCell class] forCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID];
+        
+
         
         UIView *scrollLine = [[UIView alloc] initWithFrame:CGRectZero];
         scrollLine.backgroundColor = self.selectedColor;
@@ -145,6 +177,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.frame.size.height);
     }];
+
 }
 
 #pragma mark - Action

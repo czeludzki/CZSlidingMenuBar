@@ -36,6 +36,10 @@
  */
 @property (strong, nonatomic) UIColor *selectedColor;
 /**
+ 底部线的颜色,作为底部滚动条的背景
+ */
+@property (strong, nonatomic) UIColor *bottomLineColor;
+/**
  自己翻译
  */
 @property (strong, nonatomic) UIColor *nippleColor;
