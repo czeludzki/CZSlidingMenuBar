@@ -42,7 +42,6 @@
 @synthesize selectedColor   = _selectedColor;
 @synthesize bottomLineColor = _bottomLineColor;
 
-
 static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollectionCellID";
 
 - (UIColor *)selectedColor
@@ -52,7 +51,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
     return _selectedColor;
 }
-
 
 - (UIColor *)bottomLineColor
 {
@@ -105,7 +103,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        NSAssert(YES, @"不要直接使用initWithFrame OR ini方法直接创建CZListScrollView");
+        NSAssert(YES, @"不要直接使用 initWithFrame || init 方法直接创建 CZListScrollView");
     }
     return self;
 }
@@ -134,7 +132,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.right.mas_offset(0);
             make.left.mas_offset(0);
             make.height.mas_equalTo(2);
-            //            make.width.mas_equalTo(self);
         }];
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -151,8 +148,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
         [collectionView registerClass:[CZSlidingMenuBarCollectionCell class] forCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID];
-        
-
         
         UIView *scrollLine = [[UIView alloc] initWithFrame:CGRectZero];
         scrollLine.backgroundColor = self.selectedColor;
@@ -177,7 +172,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.frame.size.height);
     }];
-
 }
 
 #pragma mark - Action
