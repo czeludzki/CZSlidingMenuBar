@@ -425,6 +425,11 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 }
 
+- (void)reloadItemsNippleState
+{
+    [self.collectionView reloadData];
+}
+
 #pragma mark - override
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {

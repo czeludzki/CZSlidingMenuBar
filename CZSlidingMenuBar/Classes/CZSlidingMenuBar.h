@@ -83,6 +83,13 @@
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 
 #pragma mark - helper
+/**
+ 主动选中 index
+ */
 - (void)selectItemAtIndex:(NSInteger)index;
+/**
+ 你可能会根据需求随时改变 CZSlidingMenuBarItem.showNipple 的属性, 但 CZSlidingMenuBar 并不知道你的业务细则, 所以提供 reloadItemsNippleState 方法 将nipple显示变更响应到视图上
+ */
+- (void)reloadItemsNippleState;
 @end
 

@@ -13,6 +13,7 @@
 @interface CZSlidingMenuBarViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CZSlidingMenuBarDelegate>
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray <UIColor *>*randomColors;
+@property (nonatomic, assign) BOOL showNipple;
 @end
 
 @implementation CZSlidingMenuBarViewController
@@ -76,6 +77,8 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [slidingMenuBar selectItemAtIndex:6];
+        self.showNipple = YES;
+        [slidingMenuBar reloadItemsNippleState];
     });
 }
 
@@ -132,7 +135,7 @@
 
 - (UIView *)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
 {
-    if (index % 2 == 0) {
+    if (self.showNipple && index % 2 == 0) {
         UIView *nipple = [[UIView alloc] init];
         nipple.backgroundColor = [UIColor redColor];
         nipple.layer.cornerRadius = 3;
