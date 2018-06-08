@@ -37,11 +37,9 @@
     for (int i = 0; i < self.randomColors.count; i++) {
         CZSlidingMenuBarItem *item = [[CZSlidingMenuBarItem alloc] init];
         item.title = [NSString stringWithFormat:@"%i%i%i",i,i,i];
-        item.showNipple = i % 2 == 0;
         [items addObject:item];
     }
     CZSlidingMenuBar *slidingMenuBar = [CZSlidingMenuBar slidingMenuBarWithItems:items];
-    slidingMenuBar.nippleColor = [UIColor blueColor];
     slidingMenuBar.transformScale = 1;
     slidingMenuBar.delegate = self;
     slidingMenuBar.selectedColor = [UIColor colorWithRed:.0f green:.9f blue:.9f alpha:1];
@@ -51,7 +49,8 @@
     slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+        make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(44);
     }];
     
@@ -64,8 +63,8 @@
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(slidingMenuBar.mas_bottom);
 //        make.left.right.bottom.mas_equalTo(0);
-        make.left.mas_equalTo(32);
-        make.right.bottom.mas_equalTo(-32);
+        make.left.mas_equalTo(0);
+        make.right.bottom.mas_equalTo(0);
     }];
     self.collectionView = collectionView;
     collectionView.dataSource = self;
@@ -75,13 +74,8 @@
     // 设置 collectionView 为 menuBar 的联动视图
     slidingMenuBar.linkedScrollView = self.collectionView;
     
-    
-    // ReloadNipple 方法测试
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        for (CZSlidingMenuBarItem *i in slidingMenuBar.items) {
-            i.showNipple = NO;
-        }
-        [slidingMenuBar reloadItemsNippleState];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [slidingMenuBar selectItemAtIndex:6];
     });
 }
 
@@ -95,12 +89,23 @@
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestCellID" forIndexPath:indexPath];
     cell.backgroundColor = self.randomColors[indexPath.item];
+    UILabel *lab = [cell.contentView viewWithTag:826];
+    if (!lab) {
+        lab = [[UILabel alloc] initWithFrame:CGRectZero];
+        lab.tag = 826;
+        lab.font = [UIFont boldSystemFontOfSize:60];
+        [cell.contentView addSubview:lab];
+        [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(0);
+        }];
+    }
+    lab.text = [NSString stringWithFormat:@"%ld",indexPath.item];
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return collectionView.frame.size;
+    return collectionView.bounds.size;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -121,7 +126,29 @@
 #pragma mark - CZSlidingMenuBarDelegate
 - (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectedItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
 {
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    if (self.collectionView.isTracking || self.collectionView.isDragging || self.collectionView.isDecelerating) return;
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+}
+
+- (UIView *)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
+{
+    if (index % 2 == 0) {
+        UIView *nipple = [[UIView alloc] init];
+        nipple.backgroundColor = [UIColor redColor];
+        nipple.layer.cornerRadius = 3;
+        return nipple;
+    }
+    return nil;
+}
+
+- (CGSize)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleSizeForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
+{
+    return CGSizeMake(6, 6);
+}
+
+- (CGPoint)slidingMenuBar:(CZSlidingMenuBar *)menuBar nipplePositionForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
+{
+    return CGPointZero;
 }
 
 @end

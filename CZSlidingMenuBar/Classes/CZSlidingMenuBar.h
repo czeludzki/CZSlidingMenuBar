@@ -11,10 +11,29 @@
 
 @class CZSlidingMenuBar;
 @protocol CZSlidingMenuBarDelegate <NSObject>
+@optional
 /**
  不论滑动后选定item 或 点击item选定,都会走这个方法
  */
 - (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectedItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index;
+/**
+ nipple for item
+ nullable
+ */
+- (UIView *)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index;
+/**
+ size for nipple
+ default is CGSizeZero
+ base on auto layout, do something like make.width.mas_equalTo(size.width); inside
+ if slidingMenuBar:nippleForItem:index: return nil, this is not call
+ */
+- (CGSize)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleSizeForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index;
+/**
+ position for nipple
+ base on auto layout, do something like make.left.mas_equalTo(point.y); inside
+ if slidingMenuBar:nippleForItem:index: return nil, this is not call
+ */
+- (CGPoint)slidingMenuBar:(CZSlidingMenuBar *)menuBar nipplePositionForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index;
 @end
 
 @interface CZSlidingMenuBar : UIView
@@ -39,10 +58,6 @@
  底部线的颜色,作为底部滚动条的背景
  */
 @property (strong, nonatomic) UIColor *bottomLineColor;
-/**
- 自己翻译
- */
-@property (strong, nonatomic) UIColor *nippleColor;
 /**
  font
  */
@@ -69,9 +84,5 @@
 
 #pragma mark - helper
 - (void)selectItemAtIndex:(NSInteger)index;
-/**
- 你可能会根据需求随时改变 CZSlidingMenuBarItem.showNipple 的属性, 但 CZSlidingMenuBar 并不知道你的业务细则, 所以提供 reloadItemsNippleState 方法 将nipple显示变更响应到视图上
- */
-- (void)reloadItemsNippleState;
 @end
 

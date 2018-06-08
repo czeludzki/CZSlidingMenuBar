@@ -16,7 +16,7 @@
 
 #define kRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-@interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+@interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CZSlidingMenuBarCollectionCell_nippleSource>
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *scrollLine;
 @property (weak, nonatomic) UIView *bottomLine;
@@ -198,9 +198,9 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CZSlidingMenuBarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID forIndexPath:indexPath];
-    cell.item = self.items[indexPath.item];
+    cell.nippleSource = self;
     cell.contentButton.titleLabel.font = self.itemFont;
-    cell.nipple.backgroundColor = self.nippleColor;
+    cell.item = self.items[indexPath.item];
     return cell;
 }
 
@@ -244,19 +244,40 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.btnOnClick = YES;
     [self selectItemAtIndex:indexPath.item];
+    self.btnOnClick = NO;
+}
+
+#pragma mark - CZSlidingMenuBarCollectionCell_nippleSource
+- (UIView *)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nippleForItem:(CZSlidingMenuBarItem *)item
+{
+    UIView *nipple = nil;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nippleForItem:index:)]) {
+        nipple = [self.delegate slidingMenuBar:self nippleForItem:item index:[self.items indexOfObject:item]];
+    }
+    return nipple;
+}
+
+- (CGSize)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nippleSizeForItem:(CZSlidingMenuBarItem *)item
+{
+    CGSize size = CGSizeZero;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nippleSizeForItem:index:)]) {
+        size = [self.delegate slidingMenuBar:self nippleSizeForItem:item index:[self.items indexOfObject:item]];
+    }
+    return size;
+}
+
+- (CGPoint)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nipplePositionForItem:(CZSlidingMenuBarItem *)item
+{
+    CGPoint position = CGPointZero;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nipplePositionForItem:index:)]) {
+        position = [self.delegate slidingMenuBar:self nipplePositionForItem:item index:[self.items indexOfObject:item]];
+    }
+    return position;
 }
 
 #pragma mark - Helper
-- (void)reloadItemsNippleState
-{
-    NSArray <NSIndexPath *>*visiblecell_idx = [self.collectionView indexPathsForVisibleItems];
-    for (NSIndexPath *idx in visiblecell_idx) {
-        CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:idx];
-        cell.nipple.hidden = !self.items[idx.item].showNipple;
-    }
-}
-
 - (void)depolyItemSizes
 {
     self.itemSizes = [NSMutableArray array];
@@ -309,12 +330,10 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         } completion:nil];
     }
     
-    self.btnOnClick = YES;
+    self.startX = self.linkedScrollView.CSM_width * index;
     if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectedItem:atIndex:)]) {
         [self.delegate slidingMenuBar:self didSelectedItem:self.items[index] atIndex:index];
     }
-    self.startX = self.linkedScrollView.CSM_width * index;
-    self.btnOnClick = NO;
 }
 
 - (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView
