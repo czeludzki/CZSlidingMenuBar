@@ -13,7 +13,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _contentEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 16);
+        _contentEdgeInsets = UIEdgeInsetsZero;
         _imageEdgeInsets = UIEdgeInsetsZero;
         _titleEdgeInsets = UIEdgeInsetsZero;
     }

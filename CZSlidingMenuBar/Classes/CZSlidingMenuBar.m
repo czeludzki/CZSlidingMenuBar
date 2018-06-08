@@ -199,8 +199,8 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 {
     CZSlidingMenuBarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID forIndexPath:indexPath];
     cell.nippleSource = self;
-    cell.contentButton.titleLabel.font = self.itemFont;
     cell.item = self.items[indexPath.item];
+    cell.contentButton.titleLabel.font = self.itemFont;
     return cell;
 }
 
@@ -244,9 +244,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.btnOnClick = YES;
     [self selectItemAtIndex:indexPath.item];
-    self.btnOnClick = NO;
 }
 
 #pragma mark - CZSlidingMenuBarCollectionCell_nippleSource
@@ -330,10 +328,13 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         } completion:nil];
     }
     
-    self.startX = self.linkedScrollView.CSM_width * index;
+    self.btnOnClick = YES;
     if ([self.delegate respondsToSelector:@selector(slidingMenuBar:didSelectedItem:atIndex:)]) {
         [self.delegate slidingMenuBar:self didSelectedItem:self.items[index] atIndex:index];
     }
+    self.startX = self.linkedScrollView.CSM_width * index;
+    self.btnOnClick = NO;
+
 }
 
 - (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView
