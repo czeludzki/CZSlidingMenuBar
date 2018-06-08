@@ -19,7 +19,6 @@
     if (self = [super initWithFrame:frame]) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         btn.userInteractionEnabled = NO;
-        [btn setBackgroundColor:[UIColor colorWithRed:(arc4random_uniform(256) / 255.0) green:(arc4random_uniform(256) / 255.0) blue:(arc4random_uniform(256) / 255.0) alpha:1]];
         [self.contentView addSubview:btn];
         self.contentButton = btn;
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,9 +69,11 @@
     }
     
     [self.nipple mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(position.x);
-        make.top.mas_equalTo(position.y);
         make.size.mas_equalTo(size);
+        if (position.x >= 0) make.left.mas_equalTo(position.x);
+        if (position.y >= 0) make.top.mas_equalTo(position.y);
+        if (position.x < 0) make.right.mas_equalTo(position.x);
+        if (position.y < 0) make.bottom.mas_equalTo(position.y);
     }];
 }
 

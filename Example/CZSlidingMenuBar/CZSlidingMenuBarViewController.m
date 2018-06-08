@@ -11,6 +11,7 @@
 #import <CZSlidingMenuBar/CZSlidingMenuBar.h>
 
 @interface CZSlidingMenuBarViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CZSlidingMenuBarDelegate>
+@property (nonatomic, weak) CZSlidingMenuBar *slidingMenuBar;
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray <UIColor *>*randomColors;
 @property (nonatomic, assign) BOOL showNipple;
@@ -49,6 +50,7 @@
     slidingMenuBar.averageBarWidth = 0;     // 0 ~ 8
     slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
+    self.slidingMenuBar = slidingMenuBar;
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
         make.left.right.mas_equalTo(0);
@@ -75,8 +77,7 @@
     // 设置 collectionView 为 menuBar 的联动视图
     slidingMenuBar.linkedScrollView = self.collectionView;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [slidingMenuBar selectItemAtIndex:6];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.showNipple = YES;
         [slidingMenuBar reloadItemsNippleState];
     });
@@ -126,6 +127,12 @@
     return 0;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.showNipple = !self.showNipple;
+    [self.slidingMenuBar reloadItemsNippleState];
+}
+
 #pragma mark - CZSlidingMenuBarDelegate
 - (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectedItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
 {
@@ -151,7 +158,7 @@
 
 - (CGPoint)slidingMenuBar:(CZSlidingMenuBar *)menuBar nipplePositionForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index
 {
-    return CGPointZero;
+    return CGPointMake(-1, 1);
 }
 
 @end

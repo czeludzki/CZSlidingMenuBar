@@ -422,12 +422,15 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     // 改变大小
     targetCell.contentButton.transform = CGAffineTransformMakeScale(1 + (self.transformScale - 1) * progress, 1 + (self.transformScale - 1) * progress);
     sourecCell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale + (1 - self.transformScale) * progress, self.transformScale + (1 - self.transformScale) * progress);
-
 }
 
 - (void)reloadItemsNippleState
 {
-    [self.collectionView reloadData];
+    NSArray <NSIndexPath *>*visiblecell_idx = [self.collectionView indexPathsForVisibleItems];
+    for (NSIndexPath *idx in visiblecell_idx) {
+        CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:idx];
+        [cell layoutNipple];
+    }
 }
 
 #pragma mark - override

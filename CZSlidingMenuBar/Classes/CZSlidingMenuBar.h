@@ -32,6 +32,12 @@
  position for nipple
  base on auto layout, do something like make.left.mas_equalTo(point.y); inside
  if slidingMenuBar:nippleForItem:index: return nil, this is not call
+ 返回的 Point 可以为 负,
+ 如:
+    point.x = -1, 则内部会使用 make.right.mas_equalTo(point.x)
+    point.y = -1, 则内部会使用 make.bottom.mas_equalTo(point.y)
+    point.x = 1, 则内部会使用 make.left.mas_equalTo(point.x)
+    point.y = 1, 则内部会使用 make.top.mas_equalTo(point.y)
  */
 - (CGPoint)slidingMenuBar:(CZSlidingMenuBar *)menuBar nipplePositionForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index;
 @end
