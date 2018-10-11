@@ -237,7 +237,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     if (self.selectedIndex == indexPath.item) {
         [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.center.x);
-            make.width.mas_equalTo([self.itemSizes[indexPath.item] CGSizeValue].width);
+            make.width.mas_equalTo(self.scrollLineWidth > 0 ? self.scrollLineWidth : [self.itemSizes[indexPath.item] CGSizeValue].width);
         }];
         [self layoutIfNeeded];
         cell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
@@ -307,7 +307,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         button.tintColor = self.selectedColor;
         button.transform = CGAffineTransformMakeScale(self.transformScale, self.transformScale);
         [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(cell.CSM_width);
+            make.width.mas_equalTo(self.scrollLineWidth > 0 ? self.scrollLineWidth : cell.CSM_width);
             make.centerX.mas_equalTo(-self.frame.size.width * .5f + cell.CSM_centerX);
         }];
         [UIView animateWithDuration:.3f animations:^{
@@ -383,6 +383,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 
     CGFloat scrollLineW = sourecCell.CSM_width + (targetCell.CSM_width - sourecCell.CSM_width) * progress;
+    scrollLineW =  self.scrollLineWidth > 0 ? self.scrollLineWidth : scrollLineW;
     CGFloat scrollLineCenterX = sourecCell.CSM_centerX + ((targetCell.CSM_centerX - sourecCell.CSM_centerX) * progress);
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(scrollLineW);
