@@ -48,6 +48,7 @@
     slidingMenuBar.barTintColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
     slidingMenuBar.bottomLineColor = [UIColor redColor];
     slidingMenuBar.averageBarWidth = 0;     // 0 ~ 8
+//    slidingMenuBar.scrollLineWidth = 16.0f;
     slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
     self.slidingMenuBar = slidingMenuBar;

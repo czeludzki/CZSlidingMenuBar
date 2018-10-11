@@ -84,6 +84,12 @@
     if 1 ~ 8, item宽度 = bar.width / 1 ~ 8  ----> |  a  | aaa |aaaaa|
  */
 @property (assign, nonatomic) NSInteger averageBarWidth;
+
+/**
+ 底部游标宽度，如果大于0，则由averageBarWidth计算得到的游标宽度无效
+ */
+@property (assign, nonatomic) CGFloat scrollLineWidth;
+
 #pragma mark - initialization
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
