@@ -90,6 +90,16 @@
  */
 @property (assign, nonatomic) CGFloat scrollLineWidth;
 
+/**
+ 底部游标距离底部的偏移量
+ */
+@property (assign, nonatomic) CGFloat scrollLineBottomOffset;
+
+/**
+ 底部游标颜色,如果不设置则默认和selectedColor一致
+ */
+@property (strong, nonatomic) UIColor *scrollLineColor;
+
 #pragma mark - initialization
 + (instancetype)slidingMenuBarWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;

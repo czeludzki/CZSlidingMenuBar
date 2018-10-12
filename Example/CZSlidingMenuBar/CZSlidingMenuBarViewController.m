@@ -48,7 +48,9 @@
     slidingMenuBar.barTintColor = [UIColor colorWithRed:.3f green:.1f blue:.2f alpha:1];
     slidingMenuBar.bottomLineColor = [UIColor redColor];
     slidingMenuBar.averageBarWidth = 0;     // 0 ~ 8
-//    slidingMenuBar.scrollLineWidth = 16.0f;
+    slidingMenuBar.scrollLineWidth = 16.0f;
+    slidingMenuBar.scrollLineBottomOffset = 5.0f;
+    slidingMenuBar.scrollLineColor = [UIColor yellowColor];
     slidingMenuBar.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:slidingMenuBar];
     self.slidingMenuBar = slidingMenuBar;
@@ -82,6 +84,8 @@
         self.showNipple = YES;
         [slidingMenuBar reloadItemsNippleState];
     });
+    
+    
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
