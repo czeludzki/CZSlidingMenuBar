@@ -65,7 +65,16 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (void)setSelectedColor:(UIColor *)selectedColor
 {
     _selectedColor = selectedColor;
-    self.scrollLine.backgroundColor = _selectedColor;
+    if (!_scrollLineColor) {
+        self.scrollLineColor = _selectedColor;
+    }
+}
+
+- (void)setScrollLineColor:(UIColor *)scrollLineColor
+{
+    _scrollLineColor = scrollLineColor;
+    self.scrollLine.backgroundColor = _scrollLineColor;
+
 }
 
 - (void)setBottomLineColor:(UIColor *)bottomLineColor
@@ -80,6 +89,11 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
         _barTintColor = [UIColor darkGrayColor];
     }
     return _barTintColor;
+}
+
+- (void)setScrollLineBottomOffset:(CGFloat)scrollLineBottomOffset
+{
+    _scrollLineBottomOffset = scrollLineBottomOffset;
 }
 
 - (void)setLinkedScrollView:(UIScrollView *)linkedScrollView
@@ -134,7 +148,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.right.mas_offset(0);
             make.left.mas_offset(0);
             make.height.mas_equalTo(2);
-            //            make.width.mas_equalTo(self);
+            
         }];
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -175,7 +189,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     // 计算 item 的 size
     [self depolyItemSizes];
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.frame.size.height);
+        make.bottom.mas_offset(self.frame.size.height - self.scrollLineBottomOffset);
     }];
 
 }
