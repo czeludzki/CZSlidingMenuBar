@@ -16,7 +16,7 @@
 
 #define kRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-@interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+@interface CZSlidingMenuBar () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CZSlidingMenuBarCollectionCell_nippleSource>
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *scrollLine;
 @property (weak, nonatomic) UIView *bottomLine;
@@ -42,7 +42,6 @@
 @synthesize selectedColor   = _selectedColor;
 @synthesize bottomLineColor = _bottomLineColor;
 
-
 static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollectionCellID";
 
 - (UIColor *)selectedColor
@@ -52,7 +51,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
     return _selectedColor;
 }
-
 
 - (UIColor *)bottomLineColor
 {
@@ -119,7 +117,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        NSAssert(YES, @"不要直接使用initWithFrame OR ini方法直接创建CZListScrollView");
+        NSAssert(YES, @"不要直接使用 initWithFrame || init 方法直接创建 CZListScrollView");
     }
     return self;
 }
@@ -148,7 +146,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.right.mas_offset(0);
             make.left.mas_offset(0);
             make.height.mas_equalTo(2);
-            
         }];
         
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -165,8 +162,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
         [collectionView registerClass:[CZSlidingMenuBarCollectionCell class] forCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID];
-        
-
         
         UIView *scrollLine = [[UIView alloc] initWithFrame:CGRectZero];
         scrollLine.backgroundColor = self.selectedColor;
@@ -191,7 +186,6 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self.scrollLine mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_offset(self.frame.size.height - self.scrollLineBottomOffset);
     }];
-
 }
 
 #pragma mark - Action
@@ -218,9 +212,9 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CZSlidingMenuBarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CZSlidingMenuBarCollectionCellID forIndexPath:indexPath];
+    cell.nippleSource = self;
     cell.item = self.items[indexPath.item];
     cell.contentButton.titleLabel.font = self.itemFont;
-    cell.nipple.backgroundColor = self.nippleColor;
     return cell;
 }
 
@@ -267,16 +261,35 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     [self selectItemAtIndex:indexPath.item];
 }
 
-#pragma mark - Helper
-- (void)reloadItemsNippleState
+#pragma mark - CZSlidingMenuBarCollectionCell_nippleSource
+- (UIView *)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nippleForItem:(CZSlidingMenuBarItem *)item
 {
-    NSArray <NSIndexPath *>*visiblecell_idx = [self.collectionView indexPathsForVisibleItems];
-    for (NSIndexPath *idx in visiblecell_idx) {
-        CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:idx];
-        cell.nipple.hidden = !self.items[idx.item].showNipple;
+    UIView *nipple = nil;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nippleForItem:index:)]) {
+        nipple = [self.delegate slidingMenuBar:self nippleForItem:item index:[self.items indexOfObject:item]];
     }
+    return nipple;
 }
 
+- (CGSize)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nippleSizeForItem:(CZSlidingMenuBarItem *)item
+{
+    CGSize size = CGSizeZero;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nippleSizeForItem:index:)]) {
+        size = [self.delegate slidingMenuBar:self nippleSizeForItem:item index:[self.items indexOfObject:item]];
+    }
+    return size;
+}
+
+- (CGPoint)slidingMenuBarCell:(CZSlidingMenuBarCollectionCell *)menuBarCell nipplePositionForItem:(CZSlidingMenuBarItem *)item
+{
+    CGPoint position = CGPointZero;
+    if ([self.delegate respondsToSelector:@selector(slidingMenuBar:nipplePositionForItem:index:)]) {
+        position = [self.delegate slidingMenuBar:self nipplePositionForItem:item index:[self.items indexOfObject:item]];
+    }
+    return position;
+}
+
+#pragma mark - Helper
 - (void)depolyItemSizes
 {
     self.itemSizes = [NSMutableArray array];
@@ -335,6 +348,7 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
     self.startX = self.linkedScrollView.CSM_width * index;
     self.btnOnClick = NO;
+
 }
 
 - (void)sourceScrollViewDidEndDecelerating:(UIScrollView *)sourceScrollView
@@ -424,7 +438,15 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     // 改变大小
     targetCell.contentButton.transform = CGAffineTransformMakeScale(1 + (self.transformScale - 1) * progress, 1 + (self.transformScale - 1) * progress);
     sourecCell.contentButton.transform = CGAffineTransformMakeScale(self.transformScale + (1 - self.transformScale) * progress, self.transformScale + (1 - self.transformScale) * progress);
+}
 
+- (void)reloadItemsNippleState
+{
+    NSArray <NSIndexPath *>*visiblecell_idx = [self.collectionView indexPathsForVisibleItems];
+    for (NSIndexPath *idx in visiblecell_idx) {
+        CZSlidingMenuBarCollectionCell *cell = (CZSlidingMenuBarCollectionCell *)[self.collectionView cellForItemAtIndexPath:idx];
+        [cell layoutNipple];
+    }
 }
 
 #pragma mark - override
