@@ -57,7 +57,7 @@
     [slidingMenuBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
         make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(44);
+        make.height.mas_equalTo(60);
     }];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -65,7 +65,7 @@
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     collectionView.pagingEnabled = YES;
     collectionView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:collectionView];
+    [self.view insertSubview:collectionView atIndex:0];
     [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(slidingMenuBar.mas_bottom);
 //        make.left.right.bottom.mas_equalTo(0);
@@ -84,7 +84,6 @@
         self.showNipple = YES;
         [slidingMenuBar reloadItemsNippleState];
     });
-    
     
 }
 
@@ -142,7 +141,7 @@
 - (void)slidingMenuBar:(CZSlidingMenuBar *)menuBar didSelectedItem:(CZSlidingMenuBarItem *)item atIndex:(NSInteger)index
 {
     if (self.collectionView.isTracking || self.collectionView.isDragging || self.collectionView.isDecelerating) return;
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    [self.collectionView setContentOffset:CGPointMake(index * self.collectionView.frame.size.width, 0) animated:YES];
 }
 
 - (UIView *)slidingMenuBar:(CZSlidingMenuBar *)menuBar nippleForItem:(CZSlidingMenuBarItem *)item index:(NSInteger)index

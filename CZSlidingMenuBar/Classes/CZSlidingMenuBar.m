@@ -1,9 +1,8 @@
 //
 //  CZListScrollView.m
-//  ZaiHu
 //
 //  Created by siu on 15/12/7.
-//  Copyright © 2015年 Remind. All rights reserved.
+//  Copyright © 2015年. All rights reserved.
 //
 
 #import "CZSlidingMenuBar.h"
@@ -20,7 +19,6 @@
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIView *scrollLine;
 @property (weak, nonatomic) UIView *bottomLine;
-@property (weak, nonatomic) CADisplayLink *displayLink;
 @property (strong, nonatomic) NSMutableArray <NSValue *>*itemSizes;
 // 记录点击状态,适时禁用contentOffset的监听
 @property (assign, nonatomic, getter=isBtnOnClick) BOOL btnOnClick;
@@ -96,10 +94,11 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
 
 - (void)setLinkedScrollView:(UIScrollView *)linkedScrollView
 {
+    if (_linkedScrollView != nil) {
+        [self removeLinkingScrollViewObserver];
+    }
     _linkedScrollView = linkedScrollView;
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(trackingScrollViewLooping:)];
-    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-    self.displayLink = displayLink;
+    [_linkedScrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)setAverageBarWidth:(NSInteger)averageBarWidth
@@ -188,19 +187,29 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }];
 }
 
-#pragma mark - Action
-- (void)trackingScrollViewLooping:(CADisplayLink *)sender
+- (void)willMoveToSuperview:(UIView *)newSuperview
 {
-    if (self.linkedScrollView.isDragging) {
-        [self setOffsetX:self.linkedScrollView.contentOffset.x];
+    [super willMoveToSuperview:newSuperview];
+    if (newSuperview == nil) {
+        [self removeLinkingScrollViewObserver];
     }
-    
-    if (self.trackingScrollViewIsDragging && !self.linkedScrollView.isDragging) {
-        self.trackingFlag = YES;
-        [self sourceScrollViewDidEndDecelerating:self.linkedScrollView];
-        self.trackingFlag = NO;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if (object != self.linkedScrollView) { return; }
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        if (self.linkedScrollView.isDragging) {
+            [self setOffsetX:self.linkedScrollView.contentOffset.x];
+        }
+        
+        if (self.trackingScrollViewIsDragging && !self.linkedScrollView.isDragging) {
+            self.trackingFlag = YES;
+            [self sourceScrollViewDidEndDecelerating:self.linkedScrollView];
+            self.trackingFlag = NO;
+        }
+        self.trackingScrollViewIsDragging = self.linkedScrollView.isDragging;
     }
-    self.trackingScrollViewIsDragging = self.linkedScrollView.isDragging;
 }
 
 #pragma mark - <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -449,13 +458,14 @@ static NSString *CZSlidingMenuBarCollectionCellID = @"CZSlidingMenuBarCollection
     }
 }
 
-#pragma mark - override
-- (void)willMoveToSuperview:(UIView *)newSuperview
+- (void)reloadData
 {
-    [super willMoveToSuperview:newSuperview];
-    if (!newSuperview) {
-        [self.displayLink invalidate];
-    }
+    [self.collectionView reloadData];
+}
+
+- (void)removeLinkingScrollViewObserver
+{
+    [self.linkedScrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 @end

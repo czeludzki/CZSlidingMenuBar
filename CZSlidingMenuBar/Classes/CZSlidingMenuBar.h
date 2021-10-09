@@ -1,9 +1,8 @@
 //
 //  CZListScrollView.h
-//  ZaiHu
 //
 //  Created by siu on 15/12/7.
-//  Copyright © 2015年 Remind. All rights reserved.
+//  Copyright © 2015年. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -105,6 +104,8 @@
 - (instancetype)initWithItems:(NSArray<CZSlidingMenuBarItem *> *)items;
 
 #pragma mark - helper
+/// reload collectionView
+- (void)reloadData;
 /**
  主动选中 index
  */
